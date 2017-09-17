@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Java Scirpt demo 3 </title>
+    <script  type="text/javascript">
+        window.onload = function () {  //  加载页面的所有元素
+
+            // 获取id 为 btn 的元素
+            var btn = document.getElementById("btn");
+
+            // 给元素btn 添加点击事件
+            btn.onclick = function () {
+
+                //  创建一个数组
+                 var  arrays = new Array();
+
+                 // 获取name 为 check 元素
+               var items =    document.getElementsByName("check");
+               console.log(items);
+
+               for(var i=0;i<items.length;i++){
+
+                   if(items[i].checked){   //  判断是否选中
+                        arrays.push(items[i].value);  // 把符合条件添加中数组去
+                       console.log(items[i].value);
+                   }
+               }
+               alert("数组中的大小为:"+arrays.length);
+
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+
+<form method="post" action="#">
+   <input type="checkbox" name="check" value="1" checked="checked"/>
+    <input type="checkbox" name=" check" value="2" />
+    <input type="checkbox" name="check" value="3"  checked="checked"/>
+    <input  type="button" value="你选中的个数" id="btn" />
+
+</form>
+
+
+</body>
+</html>

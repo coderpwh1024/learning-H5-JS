@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>JavaScript demo1 </title>
+    <script type="text/javascript">
+     window.onload =function (){   // 页面所有的元素加载完毕
+
+          var items = document.getElementsByTagName("p");  //  获取页面中所有的p元素
+
+          for(var i=0;i<items.length;i++){    // 循环遍历
+
+                items[i].onclick = function () {   //  给每个p元素添加特效
+                      alert("哥写的javascr");
+                }
+          }
+
+     }
+    </script>
+
+
+</head>
+<body>
+<p>测试1</p>
+<p>测试2</p>
+
+</body>
+</html>

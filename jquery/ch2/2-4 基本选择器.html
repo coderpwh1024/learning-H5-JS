@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/javascript;charset=utf-8"/>
+    <title>基本选择器</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--   引入jQuery -->
+    <script src="../scripts/jquery.js" type="text/javascript"></script>
+    <script src="lib/assist.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // 选择id 为one的元素
+           $("#btn1").click(function () {
+               $("#one").css("background","#bfa");
+           });
+
+           //  选择  class 为mini 的所有元素
+             $("#btn2").click(function () {
+                 $(".mini").css("background","#bfa");
+             })
+
+             //   选择元素名是 div 的所有元素
+             $("#btn3").click(function () {
+                 $("div").css("background","#bfa");
+             })
+
+         //  选择所有的元素
+            $("#btn4").click(function () {
+                $("*").css("background","#bfa");
+            })
+
+            //  选择所有的span 元素 并且 id 为 two
+
+            $("#btn5").click(function () {
+                $("span,#two").css("background","#bfa");
+            })
+
+
+
+
+
+        })
+
+    </script>
+
+</head>
+<body>
+<button id="reset"> 手动重置页面元素</button>
+<input type="checkbox" id="isrest" checked="checked"/>
+<label for="isrest">点击下列按钮时先自动重置页面</label><br/><br/>
+<h3>基本选择器.</h3>
+
+<!--控制按钮 -->
+<input type="button" id="btn1" value="选择 id为one的元素."/>
+<input type="button" id="btn2" value="选择 class 为mini的所有元素."/>
+<input type="button" id="btn3" value="选择 元素名是div的所有元素."/>
+<input type="button" id="btn4" value="选择 所有的元素."/>
+<input type="button" id="btn5" value="选择 所有的span元素和id为two的元素."/>
+<br/><br/>
+
+<!--测试的元素-->
+
+<div id="one" class="one">
+
+    <div class="mini"> class 为 mini </div>
+    id 为one class 为 one 的div,
+</div>
+
+<div id="two" class="one" title="test">
+    id为two,class为one,title为test的div.
+    <div class="mini" title="other">class为mini,title为other</div>
+    <div class="mini" id="test">class 为mini,title为test</div>
+</div>
+
+<div class="one">
+<div class="mini">class 为mini</div>
+<div class="mini">class 为mini</div>
+<div class="mini">class 为mini</div>
+<div class="mini"></div>
+</div>
+
+
+<div class="one">
+    <div class="mini">class 为mini</div>
+    <div class="mini">class 为mini</div>
+    <div class="mini">class 为mini</div>
+    <div class="mini" title="test"> class 为mini ,title为test</div>
+</div>
+
+<div style="display: none;" class="one">
+    style的display 为 "none"的div
+</div>
+
+<div class="hide"> class 为"hide"的div</div>
+
+<div>
+ 包含input的type为"hidden"的div <input type="hidden" size="8"/>
+</div>
+
+<span id="mover">正在执行动画的span元素. </span>
+
+
+
+
+
+</body>
+</html>
