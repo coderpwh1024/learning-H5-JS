@@ -54,6 +54,10 @@
         <option value="$PROJECT_DIR$/ch2/2-9 属性选择器(补充).html" />
         <option value="$PROJECT_DIR$/ch2/2-10 子元素过滤选择器.html" />
         <option value="$PROJECT_DIR$/ch2/2-11- 表单对象属性过滤选择器.html" />
+        <option value="$PROJECT_DIR$/ch2/2-15 案例研究/第1步 - 设计结构和样式，初始化.html" />
+        <option value="$PROJECT_DIR$/ch2/2-15 案例研究/第2步 - 隐藏品牌.html" />
+        <option value="$PROJECT_DIR$/ch2/2-15 案例研究/第3步 - 用户点击“显示全部品牌”按钮.html" />
+        <option value="$PROJECT_DIR$/ch2/2-15 案例研究/第4步 - 全部和精简的切换.html" />
       </list>
     </option>
   </component>
@@ -111,6 +115,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2-15 案例研究" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -124,6 +146,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\web_workspace\jquery\ch2\2-15 案例研究" />
       <recent name="C:\web_workspace\jquery\ch2" />
       <recent name="C:\web_workspace\jquery" />
       <recent name="C:\web_workspace\jquery\scripts" />
@@ -229,12 +252,12 @@
       <workItem from="1505743565123" duration="4545000" />
       <workItem from="1505829515010" duration="3274000" />
       <workItem from="1505914209743" duration="4975000" />
-      <workItem from="1506230290121" duration="6963000" />
+      <workItem from="1506230290121" duration="11870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43345000" />
+    <option name="totallyTimeSpent" value="48252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,6 +535,46 @@
           <folding>
             <element signature="n#style#0;n#select#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch2/2-15 案例研究/第1步 - 设计结构和样式，初始化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#li#6;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#7;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#8;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#9;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#10;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#11;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#12;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch2/2-15 案例研究/第2步 - 隐藏品牌.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch2/2-15 案例研究/第3步 - 用户点击“显示全部品牌”按钮.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="24" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch2/2-15 案例研究/第4步 - 全部和精简的切换.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="17" column="67" lean-forward="true" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
