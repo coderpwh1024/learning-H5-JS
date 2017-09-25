@@ -15,9 +15,17 @@
 |selector1,selector2,.....       |将每一个选择器匹配到的元素合并在一起|集合元素|$("div,span,p.myClass")选取所有<div>,<span>和拥有 class为myClass的<p> 标签的一组元素 |
        
 
- 
 
-   
+
+**2.层次选择器**
+
+
+| 选择器 | 描述                      | 返回       |  实例                                  |
+| ----- |:------------------------: | ---------:|----------------------------------------|
+|$("ancestor descendant") |选取ancestor元素里的所有descend（后代）元素| 集合元素|$("div span")选取<div>里所有的<span>元素|
+| $("parent>child")| 选取parent元素下的child（子）元素,与$("ancestor descendant")有区别，$("ancestor descendant")选取的是后代元素| 集合元素 |$("div>span")选取<div>元素下元素名是<span>的子元素|
+|$("prev+next")|选取紧接在prev元素后的next元素| 集合元素| $(".one+div")选取class为one的下一个<div>同辈元素|
+|$("prev~siblings")|选取prev元素之后的所有siblings元素|集合元素|$("#two~div")选取id为two的元素后面的所有<div>同辈元素|
 
 
  
