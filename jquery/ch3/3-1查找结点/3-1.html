@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>3-1查找结点</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       $(document).ready(function () {
+
+            var  $para =$("p")  // 获取  <p> 结点
+
+             var $li = $("ul li:eq(1)")  // 获取 第二个li元素
+
+            var  p_txt = $para.attr("title");    //  输出p节点上的属性title
+
+           var  ul_txt = $li.attr("title");    //  输出第二个li元素上的结点属性title
+
+           var li_txt =$li.text();   //   输出第二个<li>元素节点的text
+
+           alert(p_txt);
+           alert(ul_txt);
+           alert(li_txt);
+       })
+
+    </script>
+
+</head>
+<body>
+<p title="选择你最喜欢的水果是."> 你最喜欢的水果是?</p>
+<ul>
+    <li title="苹果">苹果</li>
+    <li title="菠萝">菠萝</li>
+    <li title="橘子">橘子</li>
+</ul>
+
+
+
+</body>
+</html>
