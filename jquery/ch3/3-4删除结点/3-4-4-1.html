@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>3-4-4-1</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("ul li").click(function () {
+                alert($(this).html());
+
+            })
+
+            //  var $li =    $("ul li:eq(1)").remove();
+
+            //   detach()
+
+            /* 从DOM中删除所有匹配的元素。
+
+            这个方法不会把匹配的元素从jQuery对象中删除，因而可以在将来再使用这些匹配的元素。与remove()不同的是，所有绑定的事件、附加的数据等都会保留下来。
+*/
+            var  $li = $("ul li:eq(1)").detach();
+
+              $li.appendTo("ul");
+
+               $("ul li:eq(2)").empty();   // 清空第三个元素
+
+
+        })
+
+    </script>
+
+
+</head>
+<body>
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>3-3-1.插入结点</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+             var   $li_1 = $("<li title='香蕉'>香蕉</li>");
+             var   $li_2 =$("<li title='雪梨'>雪梨</li>");
+             var  $li_3 = $("<li title=''其他'>其他</li>")
+
+
+            var $parent = $("ul");
+
+             var $two_li = $("ul li:eq(1)");   //  ul  中li 的第二个结点
+
+            $parent.append($li_1)       //  插入到父元素最后面
+
+            $parent.prepend($li_2);    // 插入到父元素最前面
+
+            $li_3.insertChildAfter($two_li);    // 插入后去到的元素后面
+
+
+        })
+
+
+    </script>
+
+</head>
+<body>
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+</body>
+</html>
