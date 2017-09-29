@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+         $(document).ready(function () {
+
+//             $("strong").wrap("<b></b>");
+
+//               $("strong").wrapAll("<b></b>");     //  注意此时 <br/> 不起作用了
+
+              $("strong").wrapInner("<b></b>");      // 此时 <strong> 中间的元素还存在
+
+         })
+         
+
+
+
+    </script>
+
+</head>
+<body>
+<strong title="选择你最喜欢的水果." >你最喜欢的水果是?</strong>
+<br/>
+<div>中间的元素</div>
+<strong title="选择你最喜欢的水果." >你最喜欢的水果是?</strong>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+</body>
+</html>

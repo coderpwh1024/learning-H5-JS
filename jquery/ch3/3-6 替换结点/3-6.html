@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>3-6替换结点</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script  type="text/javascript">
+         $(document).ready(function () {
+
+             //  方法一:
+//             $("p").replaceWith("<strong> 你最不喜欢的水果是?</strong>");
+
+             //  方法二:
+             $("<strong>你最不喜欢的水果是?</strong>").replaceAll("p");
+
+
+         })
+
+    </script>
+
+
+</head>
+<body>
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+<ul>
+<li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+    </ul>
+</body>
+</html>
