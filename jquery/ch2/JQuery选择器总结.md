@@ -10,9 +10,9 @@
 | ----- |:------------------------: | ---------:|----------------------------------------|
 |   #id | 根据给定的id匹配一个元素     | 单个元素   |  $("#test") 选取id为test的元素           |
 | .class| 根据给定的类名匹配元素       | 集合元素   |  $(".test") 选取class 为test的元素       |
-| *     | 匹配所有元素                | 集合元素   |  $("*")选取所有的元素                    |
-|element|根据给定的元素名匹配元素       |集合元素    | $("p") 选取所有的<p>元素                 |
-|selector1,selector2,.....       |将每一个选择器匹配到的元素合并在一起|集合元素|$("div,span,p.myClass")选取所有<div>,<span>和拥有 class为myClass的<p> 标签的一组元素 |
+| *     | 匹配所有元素                | 集合元素   |  $("*") 选取所有的元素 |
+|element|根据给定的元素名匹配元素       |集合元素    | $("p") 选取所有的`<p>`元素                 |
+|selector1,selector2,.....       |将每一个选择器匹配到的元素合并在一起|集合元素|$("div,span,p.myClass")选取所有`<div>`,`<span>`和拥有 class为myClass的`<p>` 标签的一组元素 |
        
 
 
@@ -22,15 +22,36 @@
 
 | 选择器 | 描述                      | 返回       |  实例                                  |
 | ----- |:------------------------: | ---------:|----------------------------------------|
-|$("ancestor descendant") |选取ancestor元素里的所有descend（后代）元素| 集合元素|$("div span")选取<div>里所有的<span>元素|
-| $("parent>child")| 选取parent元素下的child（子）元素,与$("ancestor descendant")有区别，$("ancestor descendant")选取的是后代元素| 集合元素 |$("div>span")选取<div>元素下元素名是<span>的子元素|
-|$("prev+next")|选取紧接在prev元素后的next元素| 集合元素| $(".one+div")选取class为one的下一个<div>同辈元素|
-|$("prev~siblings")|选取prev元素之后的所有siblings元素|集合元素|$("#two~div")选取id为two的元素后面的所有<div>同辈元素|
+|$("ancestor descendant") |选取ancestor元素里的所有descend（后代）元素| 集合元素|$("div span")选取`<div>`里所有的`<span>`元素|
+| $("parent>child")| 选取parent元素下的child（子）元素,与$("ancestor descendant")有区别，$("ancestor descendant")选取的是后代元素| 集合元素 |$("div>span")选取`<div>`元素下元素名是`<span>`的子元素|
+|$("prev+next")|选取紧接在prev元素后的next元素| 集合元素| $(".one+div")选取class为one的下一个`<div>`同辈元素|
+|$("prev~siblings")|选取prev元素之后的所有siblings元素|集合元素|$("#two~div")选取id为two的元素后面的所有`<div>`同辈元素|
 
-**3.内容过滤选择器**
+
+**3.基本过滤选择器**
 
 | 选择器 | 描述                      | 返回       |  实例                                  |
 | ----- |:------------------------: | ---------:|----------------------------------------|
-|   :contains(text) | 选取含有文本内容为 "text" 的元素    | 集合元素  | $("div:contains('我')") 选取含有文本 "我"的div元素       |
+| :first| 选取第1个元素  |单个元素  | $("div:first")选取所有`<div>`元素中第1个`<div>`元素|
+|:last|选取最后1个元素|单个元素|$("div:last") 选取所有`<div>`元素中最后一个`<div>`元素|
+|:not(selector)|去除所有与给定选取器匹配的元素|集合元素|$("input:not(.myClass)")选取class不是myClass的`<input> `元素|
+|:even|选取索引是偶数的所有元素，索引是从0开始|集合元素|$("input:even")选取索引是偶数的`<input>`元素|
+|:odd|选取索引是奇数的所有元素，索引是从0开始|集合元素|$("input:odd")选取索引是奇数的`<input>`元素|
+|：eq(index)|选取索引等于index的元素(index从0开始)|单个元素|$("input:eq(1)")选取索引等于1的`<input>`元素|
+|：gt(index)|选取索引大于index的元素(index从0开始)|集合元素|$("input:gt(1)")选取索引大于1的`<input>`元素|
+|：lt(index)|选取索引小于index的元素(index从0开始)|集合元素|$("input:lt(1)")选取索引小于1的`<input>`元素|
+|：header|选取所有的标题元素,列如 h1,h2,h3等等|集合元素|$(":header")选取网页中所有的`<h1>` `<h2>` `<h3>` ..... |
+|：animated|选取当前正在执行动画的所有元素|集合元素| $("div:animated")选取正在执行动画的<div>元素|
+|:focus|选取当前获取焦点的元素|集合元素|$("focus") 选取当前获取焦点的元素|
 
- 
+
+
+
+**4.内容过滤选择器**
+
+| 选择器 | 描述                      | 返回       |  实例                                  |
+| ----- |:------------------------: | ---------:|----------------------------------------|
+|:contains(text) |   选取含有文本内容为 "text" 的元素    |  集合元素  | $("div:contains('我')") 选取含有文本 "我"的div元素|
+| :empty         |    选取不包含子元素或者文本的空元素  | 集合元素   | $("div:empty") 选取不包含子元素(包括文本元素)的`<div>`空元素|
+|:has(selector)| 选取含有选择器所匹配的元素的元素|集合元素  | $("div:has(p)") 选取含有`<p>` 元素的`<div>`元素 |
+|：parent| 选取含有子元素或者文本的元素|集合元素|$("div:parent")选取拥有子元素(包括文本元素)的`<div>`元素 |
