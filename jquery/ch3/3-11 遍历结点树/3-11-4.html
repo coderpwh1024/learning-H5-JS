@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>3-11-4</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+               //  parent
+             $("input:eq(0)").click(function () {
+                 resetStyle();
+                 $(".item-1").parent().css("background-color","red");
+             });
+
+             // parents
+             $("input:eq(1)").click(function () {
+                 resetStyle();
+                 $(".item-1").parents("ul").css("background-color","red");
+             });
+
+             //  closest
+             $("input:eq(2)").click(function () {
+                 resetStyle();
+                 $(".item-1").closest('ul').css("background-color","red");
+             });
+
+
+
+
+
+             function resetStyle(){
+                 $("*").removeAttr("style");
+             }
+         })
+         
+     </script>
+    
+</head>
+<body>
+<input type="button" value="parent()"/>
+<input type="button" value="parents()"/>
+<input type="button" value="closest()"/>
+
+<ul id="one" class="lever-1">
+    <li class="item-i">I</li>
+    <li class="item-ii" id="ii">
+        <ul class="lever-2">
+            <li class="item-a"><a href="#" class="item-1">Home</a> </li>
+            <li class="item-b"><a href="#" class="item-2">Product</a></li>
+            <li class="item-c"><a href="#" class="item-3">About</a></li>
+        </ul>
+    </li>
+    <li class="item-iii">III</li>
+
+</ul>
+
+</body>
+</html>
