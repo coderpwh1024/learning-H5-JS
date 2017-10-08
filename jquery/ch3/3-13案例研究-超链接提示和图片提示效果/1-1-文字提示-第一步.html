@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>文字提示</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <style type="text/css">
+        body{
+            margin:0;
+            padding:40px;
+            background:#fff;
+            font:80% Arial, Helvetica, sans-serif;
+            color:#555;
+            line-height:180%;
+        }
+        p{
+            clear:both;
+            margin:0;
+            padding:.5em 0;
+        }
+        /* tooltip */
+        #tooltip{
+            position:absolute;
+            border:1px solid #333;
+            background:#f7f5d1;
+            padding:1px;
+            color:#333;
+            display:none;
+        }
+    </style>
+  <script type="text/javascript">
+      $(document).ready(function () {
+           $("a.tooltip").onmouseover(function (e) {
+               var tooltip =  "<div id='tooltip'>"+this.title+ "<\/div>" ;  // div 创建
+               $("body").append(tooltip);
+
+               $("#tooltip").css({
+                   "top":e.pageY+"px",
+                   "left":e.payX+"px"
+               }).show("fast");    //  设置 X,Y坐标并且显示
+
+           }).onmouseout(function () {
+               $("#tooltip").remove();   //   移除
+           });
+      });
+      
+  </script>
+    
+</head>
+<body>
+
+<p> <a href="#" class="tooltip" title="这是我的超链接提示1.">提示1.</a></p>
+<p> <a href="#" class="tooltip" title="这是我超链接提示2.">提示2.</a></p>
+<p> <a href="#" title="这是自带提示1.">自带提示1. </a></p>
+<p><a href="#" title="这是自带提示2.">自带提示2. </a></p>
+
+</body>
+</html>
