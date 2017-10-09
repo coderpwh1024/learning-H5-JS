@@ -32,7 +32,7 @@
     </style>
   <script type="text/javascript">
       $(document).ready(function () {
-           $("a.tooltip").onmouseover(function (e) {
+           $("a.tooltip").mouseover(function (e) {
                var tooltip =  "<div id='tooltip'>"+this.title+ "<\/div>" ;  // div 创建
                $("body").append(tooltip);
 
@@ -41,7 +41,7 @@
                    "left":e.payX+"px"
                }).show("fast");    //  设置 X,Y坐标并且显示
 
-           }).onmouseout(function () {
+           }).mouseout(function () {
                $("#tooltip").remove();   //   移除
            });
       });
