@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>加载</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--js映入 -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var startTime = new Date().getTime();
+        $(document).ready(function(){
+            test1();
+        })
+        function test1() {
+            var endTime = new Date().getTime();
+            var a = endTime - startTime;
+            $("<div>JQuery 的ready():"+a+" ms</div>").append("body");
+        }
+
+        function test2() {
+            var endTime = new Date().getTime();
+            var b = endTime - startTime;
+            $("<p>JavaScript的window.onload : "+b+" ms</p>").appendTo("body");
+        }
+        
+        
+    </script>
+    
+</head>
+<body onload="test2();">
+
+<img src="demo.jpg" style="width:200px;height: 200px"/>
+
+</body>
+</html>

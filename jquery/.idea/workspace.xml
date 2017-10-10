@@ -17,7 +17,20 @@
     <favorites_list name="jquery" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="4-0-1加载时间对比.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch4/0-ready()/4-0-1加载时间对比.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,7 +43,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ch2/2-2：jQuery选择的优势-完善的处理机制(预留退路)/2-2-1.html" />
         <option value="$PROJECT_DIR$/ch2/2-2：jQuery选择的优势-完善的处理机制(预留退路)/2-2-2.html" />
         <option value="$PROJECT_DIR$/ch2/2-2：jQuery选择的优势-完善的处理机制(预留退路)/2-2-3.html" />
         <option value="$PROJECT_DIR$/ch2/2-3Javascript例子/2-3-1.html" />
@@ -81,6 +93,7 @@
         <option value="$PROJECT_DIR$/ch3/3-13案例研究-超链接提示和图片提示效果/1-1-文字提示-第一步.html" />
         <option value="$PROJECT_DIR$/ch3/3-13案例研究-超链接提示和图片提示效果/1-2-文字提示-第二步.html" />
         <option value="$PROJECT_DIR$/ch3/3-13案例研究-超链接提示和图片提示效果/2-1-图片提示-第一步.html" />
+        <option value="$PROJECT_DIR$/ch4/0-ready()/4-0-1加载时间对比.html" />
       </list>
     </option>
   </component>
@@ -134,11 +147,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ch3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3-13案例研究-超链接提示和图片提示效果" />
+              <option name="myItemId" value="ch4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -152,7 +161,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ch3" />
+              <option name="myItemId" value="ch4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="0-ready()" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -169,11 +182,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\web_workspace\jquery\ch4\0-ready()" />
+      <recent name="C:\web_workspace\jquery\ch4" />
       <recent name="C:\web_workspace\jquery\ch3\3-13案例研究-超链接提示和图片提示效果" />
       <recent name="C:\web_workspace\jquery\ch3\3-2创建结点" />
       <recent name="C:\web_workspace\jquery\ch2\2-15 案例研究" />
-      <recent name="C:\web_workspace\jquery\ch2" />
-      <recent name="C:\web_workspace\jquery" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -285,12 +298,12 @@
       <workItem from="1507361274811" duration="9426000" />
       <workItem from="1507433805420" duration="1825000" />
       <workItem from="1507557507708" duration="2921000" />
-      <workItem from="1507644446097" duration="1096000" />
+      <workItem from="1507644446097" duration="3157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85836000" />
+    <option name="totallyTimeSpent" value="87897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,9 +315,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19033675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19033675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -333,20 +346,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch2/2-1：初探jQuery/2-1-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch2/2-2：jQuery选择的优势-完善的处理机制(预留退路)/2-2-3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch2/2-3Javascript例子/2-3-1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -690,6 +689,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/0-ready()/4-0-1加载时间对比.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
