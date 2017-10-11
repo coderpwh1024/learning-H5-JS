@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Dom 加载</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <!-- 此时错误 -->
+<!--    <script type="text/javascript">
+        document.getElementById("panel").onclick=function () {
+            alert("元素加载完毕");
+        }
+    </script>-->
+
+      <!--  js 加载-->
+
+  <!--  <script type="text/javascript">
+      window.onload= function () {
+          document.getElementById("panel").onclick=function () {
+              alert("加载完毕!")
+          }
+      }
+
+    </script>-->
+
+    <!--JQ加载 -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /* JS写法 */
+            /*document.getElementById("panel").onclick = function () {
+                alert("加载完毕了!")
+            }*/
+
+             /* JQ写法 */
+             $("#panel").click(function () {
+                 alert("1111");
+             })
+        })
+        
+    </script>
+
+
+</head>
+<body>
+<div id="panel">Click me </div>
+
+<!--<script type="text/javascript">
+    document.getElementById("panel").onclick=function () {
+        alert("元素加载完毕");
+    }
+</script>-->
+
+</body>
+</html>
