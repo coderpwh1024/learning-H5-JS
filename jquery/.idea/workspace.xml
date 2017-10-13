@@ -18,21 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="4-2-1-初始化状态.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ch4/2-事件绑定/4-2-1-初始化状态.html">
+      <file leaf-file-name="4-3-1合成事件hover.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch4/3-合成事件/4-3-1合成事件hover.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+            <state relative-caret-position="150">
+              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="4-2-2-鼠标滑过.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ch4/2-事件绑定/4-2-2-鼠标滑过.html">
+      <file leaf-file-name="4-3-2合成事件toggle.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch4/3-合成事件/4-3-2合成事件toggle.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="84">
+              <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -51,8 +51,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ch2/2-13 jq/2-13-1.html" />
-        <option value="$PROJECT_DIR$/ch2/2-13 jq/2-13-2、.html" />
         <option value="$PROJECT_DIR$/ch2/2-13 jq/2-13-3.html" />
         <option value="$PROJECT_DIR$/ch2/lib/assist.js" />
         <option value="$PROJECT_DIR$/ch2/2-5 层次过滤器.html" />
@@ -102,6 +100,8 @@
         <option value="$PROJECT_DIR$/ch4/1-DOM准备/4-1-5-2-document.ready.html" />
         <option value="$PROJECT_DIR$/ch4/2-事件绑定/4-2-1-初始化状态.html" />
         <option value="$PROJECT_DIR$/ch4/2-事件绑定/4-2-2-鼠标滑过.html" />
+        <option value="$PROJECT_DIR$/ch4/3-合成事件/4-3-1合成事件hover.html" />
+        <option value="$PROJECT_DIR$/ch4/3-合成事件/4-3-2合成事件toggle.html" />
       </list>
     </option>
   </component>
@@ -172,7 +172,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="2-事件绑定" />
+              <option name="myItemId" value="3-合成事件" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,12 +308,12 @@
       <workItem from="1507557507708" duration="2921000" />
       <workItem from="1507644446097" duration="3157000" />
       <workItem from="1507730637697" duration="3590000" />
-      <workItem from="1507816093038" duration="1376000" />
+      <workItem from="1507816093038" duration="2902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92863000" />
+    <option name="totallyTimeSpent" value="94389000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -325,8 +325,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19033675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -357,20 +356,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch2/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch2/lib/assist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch2/2-5 层次选择器.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -669,6 +654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -702,6 +688,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/2-事件绑定/4-2-2-鼠标滑过.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ch4/2-事件绑定/4-2-1-初始化状态.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -710,10 +704,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ch4/2-事件绑定/4-2-2-鼠标滑过.html">
+    <entry file="file://$PROJECT_DIR$/ch4/3-合成事件/4-3-1合成事件hover.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/3-合成事件/4-3-2合成事件toggle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
