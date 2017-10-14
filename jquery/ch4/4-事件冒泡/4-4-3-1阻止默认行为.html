@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>阻止默认行为</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sub").bind("click",function () {
+                var username = $("#username").val();
+                  if(username==""){
+                      //  $("#msg").html("<p> 文本框的值不能为空</p>");
+                      var txt = $("#msg").html()+"<p>亲,文本框的值不能为空!</p>";
+                      $("#msg").html(txt);
+
+                      //  写法一，当然也可以改成 returan false;
+                     //   event.preventDefault(); 　　　//  阻止默认行为(表单提交)
+
+                      //  写法二:
+                       retrun false;
+
+                  }
+            })
+        })
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+<form action="text.html">
+ 用户名:   <input type="text" id="username">
+    <br/>
+    <input type="submit"  value="提交" id="sub">
+</form>
+
+<div id="msg"></div>
+
+
+
+</html>
