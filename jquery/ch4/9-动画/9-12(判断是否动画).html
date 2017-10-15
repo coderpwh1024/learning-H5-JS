@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body { padding: 60px }
+        .panel {position: relative; width: 100px; height:100px;border: 1px solid #0050D0;background: #96E555; cursor: pointer}
+    </style>
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            function animateIt() {
+                $("#mover").slideToggle("slow",animateIt);
+            }
+            
+            function animateIt2() {
+                $("#mover").fadeToggle("slow",animateIt2);
+            }
+            animateIt();
+
+             $("button").click(function () {
+                 if(!$("#mover").is(":animated")){
+                     $("#mover").fadeToggle("slow",animateIt2);
+                 }else{
+                     $("#mover").stop();
+                 }
+
+             })
+
+
+        })
+        
+    </script>
+
+
+</head>
+<body>
+<button>click </button>
+<div class="panel" id="mover"> 动画元素</div>
+</body>
+</html>
