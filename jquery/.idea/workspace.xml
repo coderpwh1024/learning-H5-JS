@@ -30,7 +30,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ch3/3-2创建结点/3-2-1.html" />
         <option value="$PROJECT_DIR$/ch3/3-2创建结点/3-2-2.html" />
         <option value="$PROJECT_DIR$/ch3/3-3插入结点/3-3-1-插入节点.html" />
         <option value="$PROJECT_DIR$/ch3/3-3插入结点/3-3-2-移动节点.html" />
@@ -81,6 +80,7 @@
         <option value="$PROJECT_DIR$/ch4/9-动画/9-12(判断是否动画).html" />
         <option value="$PROJECT_DIR$/ch4/9-动画/9-13(延迟动画).html" />
         <option value="$PROJECT_DIR$/ch4/9-动画/9-14(toggle).html" />
+        <option value="$PROJECT_DIR$/ch4/10-案例演示/demo2-连续点击带bug.html" />
       </list>
     </option>
   </component>
@@ -151,7 +151,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="9-动画" />
+              <option name="myItemId" value="10-案例演示" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -169,11 +169,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\web_workspace\jquery\ch4\10-案例演示" />
       <recent name="C:\web_workspace\jquery\ch4\9-动画" />
       <recent name="C:\web_workspace\jquery\ch4\8-其它用法" />
       <recent name="C:\web_workspace\jquery\ch4\5-事件对象的属性" />
       <recent name="C:\web_workspace\jquery\ch4\0-ready()" />
-      <recent name="C:\web_workspace\jquery\ch4" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -289,12 +289,12 @@
       <workItem from="1507730637697" duration="3590000" />
       <workItem from="1507816093038" duration="2902000" />
       <workItem from="1507962017140" duration="9876000" />
-      <workItem from="1508046610465" duration="7496000" />
+      <workItem from="1508046610465" duration="10122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111761000" />
+    <option name="totallyTimeSpent" value="114387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -308,7 +308,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17642753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2137628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -337,27 +337,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch3/3-4删除结点/3-4-4-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch3/3-4删除结点/3-4-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch3/3-6 替换结点/3-6.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch3/3-7 包裹结点/3-7-1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -707,6 +686,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/10-案例演示/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/10-案例演示/demo1-初始化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/10-案例演示/demo2-连续点击带bug.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1452">
+          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding />
         </state>
       </provider>
