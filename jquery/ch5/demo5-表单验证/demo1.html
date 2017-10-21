@@ -21,6 +21,8 @@
 
                   var $parent =   $(this).parent();
 
+                  $parent.find(".formitps").remove();  // 除掉先前提示
+
                   // 验证用户名
                   if($(this).is("#username")){
                       if(this.value==""||this.value.length<6){
