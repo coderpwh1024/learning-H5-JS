@@ -17,11 +17,11 @@
 
             })
            //  焦点失去
-            $("form :input").blur(function () {
+            $("form :input").blur(function () {;
 
                   var $parent =   $(this).parent();
 
-                  $parent.find(".formitps").remove();  // 除掉先前提示
+                $parent.find(".formtips").remove();// 除掉先前提示
 
                   // 验证用户名
                   if($(this).is("#username")){
@@ -44,7 +44,32 @@
                       }
                 }
 
+            });
 
+              //  提交
+           /* $("#send").click(function () {
+                $("form :input.required").trigger('blur');
+                var numError = $('form .onError').length;
+                if(numError){
+                    return  false;
+                }
+                alert(" 注册成功,密码已发到你的邮箱,请查收.");
+            })*/
+            $('#send').click(function(){
+                $("form :input.required").trigger('blur');
+                var numError = $('form .onError').length;
+                if(numError){
+                    return false;
+                }
+                alert("注册成功,密码已发到你的邮箱,请查收.");
+            });
+
+
+
+
+            //  重置
+            $("#res").click(function () {
+                $(".formtips").remove();
             })
 
 
