@@ -17,7 +17,7 @@
 
             })
            //  焦点失去
-            $("form :input").blur(function () {;
+            $("form :input").blur(function () {
 
                   var $parent =   $(this).parent();
 
@@ -44,6 +44,10 @@
                       }
                 }
 
+            }).keyup(function () {
+                $(this).triggerHandler("blur");
+            }).focus(function () {
+                $(this).triggerHandler("blur");
             });
 
               //  提交
