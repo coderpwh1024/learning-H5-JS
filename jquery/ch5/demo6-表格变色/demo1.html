@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>表格变色</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $("tr:odd").addClass("odd");   // 奇数
+            $("tr:even").addClass("even");  // 偶数
+        })
+        
+    </script>
+
+</head>
+<body>
+<table >
+    <thead><tr><th> 姓名</th><th>性别</th><th>暂住地</th></tr></thead>
+ <tbody>
+ <tr><td>柳传志</td><td>男</td><td>浙江宁波</td></tr>
+ <tr><td>王健林</td><td>女</td><td>辽宁大连</td></tr>
+ <tr><td>马化腾</td><td>男</td><td>广东深圳</td></tr>
+ <tr><td>马云</td><td>男</td><td>浙江杭州</td></tr>
+ <tr><td>李彦宏</td><td>男</td><td>北京</td></tr>
+ <tr><td>雷军</td><td>男</td><td>湖北仙桃</td></tr>
+
+
+ </tbody>
+</table>
+
+</body>
+</html>
