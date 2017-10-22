@@ -9,8 +9,19 @@
     <script src="../../scripts/jquery.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
-            $("tr:odd").addClass("odd");   // 奇数
+
+            //  写法一:
+
+          /*  $("tr:odd").addClass("odd");   // 奇数
             $("tr:even").addClass("even");  // 偶数
+*/
+            //  写法二:排除第一个行（thread里的元素）
+
+              $("tbody>tr:odd").addClass("odd");       //  层次选择器
+              $("tbody>tr:even").addClass("even");
+
+              $("tr:contains('马化腾')").addClass("selected");
+
         })
         
     </script>
