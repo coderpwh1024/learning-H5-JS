@@ -18,21 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="demo1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ch5/demo6-表格变色/demo1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="demo2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ch5/demo6-表格变色/demo2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="171">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -316,12 +306,12 @@
       <workItem from="1508563398214" duration="2639000" />
       <workItem from="1508593375649" duration="3440000" />
       <workItem from="1508637887110" duration="2933000" />
-      <workItem from="1508767311435" duration="1533000" />
+      <workItem from="1508767311435" duration="2574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128244000" />
+    <option name="totallyTimeSpent" value="129285000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -719,8 +709,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ch5/demo6-表格变色/demo2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="171">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -13,12 +13,37 @@
               $("tbody>tr:odd").addClass("odd");       //  层次选择器
               $("tbody>tr:even").addClass("even");
 
-              $("tbody>tr").click(function () {
+               //  写法一:
+            /*  $("tbody>tr").click(function () {
                   $(this).addClass('selected').siblings().removeClass('selected').end().
                       find(':radio').attr('checked',true);
-              })
+              });*/
 
-        $("table :radio:checked").parents('tr').addClass('selected');
+              //  写法二:
+
+            $('tbody>tr').click(function () {
+                  if($(this).hasClass('selected')){
+                      $(this).removeClass('selected').find(' :checkbox').attr('checked',false);
+                  }else{
+                      $(this).addClass('selected').find(':checkbox').attr('checked',true);
+                  }
+
+            });
+
+    /*        $('tbody>tr').click(function() {
+                if ($(this).hasClass('selected')) {
+                    $(this)
+                        .removeClass('selected')
+                        .find(':checkbox').attr('checked',false);
+                }else{
+                    $(this)
+                        .addClass('selected')
+                        .find(':checkbox').attr('checked',true);
+                }
+            });*/
+
+
+        $("table :checkbox:checked").parents('tr').addClass('selected');
 
 
         })
