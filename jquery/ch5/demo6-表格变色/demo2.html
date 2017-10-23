@@ -10,17 +10,16 @@
     <script>
         $(document).ready(function () {
 
-            //  写法一:
-
-          /*  $("tr:odd").addClass("odd");   // 奇数
-            $("tr:even").addClass("even");  // 偶数
-*/
-            //  写法二:排除第一个行（thread里的元素）
-
               $("tbody>tr:odd").addClass("odd");       //  层次选择器
               $("tbody>tr:even").addClass("even");
 
-//              $("tr:contains('马化腾')").addClass("selected");
+              $("tbody>tr").click(function () {
+                  $(this).addClass('selected').siblings().removeClass('selected').end().
+                      find(':radio').attr('checked',true);
+              })
+
+        $("table :radio:checked").parents('tr').addClass('selected');
+
 
         })
         
