@@ -8,23 +8,14 @@
     <!--   引入jQuery -->
     <script src="../../scripts/jquery.js" type="text/javascript"></script>
     <script type="text/javascript">
-        
         $(document).ready(function () {
 
-            /**
-             *   toggleClass() 如果存在则删，反之则加
-             *   siblings() 表示同级元素
-             *
-             */
-            $("tr.parent").click(function () {   
-                $(this).toggleClass('selected').siblings('.child_'+this.id).toggle();
-            })
-
-
-
+             $('tr.parent').click(function () {
+                 $(this).toggleClass('selected').siblings('.child_'+this.id).toggle();
+             }).click();                // 此处添加 click() 已经点击该事件
         })
-        </script>
-
+        
+    </script>
 
 </head>
 <body>

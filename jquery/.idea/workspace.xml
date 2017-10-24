@@ -41,8 +41,18 @@
       <file leaf-file-name="demo1.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ch5/demo7-表格展开伸缩/demo1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="13" column="85" lean-forward="true" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
+            <state relative-caret-position="273">
+              <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dmeo2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch5/demo7-表格展开伸缩/dmeo2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -61,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ch3/3-4删除结点/3-4-4-1.html" />
         <option value="$PROJECT_DIR$/ch3/3-5 复制结点/3-5-1.html" />
         <option value="$PROJECT_DIR$/ch3/3-6 替换结点/3-6.html" />
         <option value="$PROJECT_DIR$/ch3/3-7 包裹结点/3-7-1.html" />
@@ -111,6 +120,7 @@
         <option value="$PROJECT_DIR$/ch5/demo5-表单验证/demo1.html" />
         <option value="$PROJECT_DIR$/ch5/demo6-表格变色/demo1.html" />
         <option value="$PROJECT_DIR$/ch5/demo6-表格变色/demo2.html" />
+        <option value="$PROJECT_DIR$/ch5/demo7-表格展开伸缩/dmeo2.html" />
         <option value="$PROJECT_DIR$/ch5/demo7-表格展开伸缩/demo1.html" />
       </list>
     </option>
@@ -171,28 +181,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="demo7-表格展开伸缩" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ch5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo7-表格展开伸缩" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -349,12 +337,12 @@
       <workItem from="1508593375649" duration="3440000" />
       <workItem from="1508637887110" duration="2933000" />
       <workItem from="1508767311435" duration="2782000" />
-      <workItem from="1508853257984" duration="1271000" />
+      <workItem from="1508853257984" duration="2516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130764000" />
+    <option name="totallyTimeSpent" value="132009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -398,13 +386,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch3/3-11 遍历结点树/3-11-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch3/3-11 遍历结点树/3-11-2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -750,10 +731,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ch5/demo7-表格展开伸缩/dmeo2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ch5/demo7-表格展开伸缩/demo1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="13" column="85" lean-forward="true" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
+        <state relative-caret-position="273">
+          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
           <folding />
         </state>
       </provider>
