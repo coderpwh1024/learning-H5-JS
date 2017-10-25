@@ -16,7 +16,7 @@
              *   siblings() 表示同级元素
              *
              */
-            $("tr.parent").click(function () {   
+            $("tr.parent").click(function () {
                 $(this).toggleClass('selected').siblings('.child_'+this.id).toggle();
             })
 
