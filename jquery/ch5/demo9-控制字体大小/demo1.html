@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>放大与缩小</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!--   引入jQuery -->
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+            $("span").click(function () {
+                 var thisELe=  $("#para").css("font-size");
+
+                  var textFontSize = parseInt(thisELe,10);
+
+                  var unit = thisELe.slice(-2);  // 获取单位
+
+                 var cName = $(this).attr("class");
+                        if(cName=="bigger"){
+                            textFontSize+=2;
+                        }else if(cName=="smaller"){
+                            textFontSize-=2;
+                        }
+                        $("#para").css("font-size",textFontSize+unit);
+
+            })
+
+    })
+        </script>
+
+</head>
+<body>
+<div class="msg">
+    <div class="msg_caption">
+        <span class="bigger" >放大</span>
+        <span class="smaller" >缩小</span>
+    </div>
+    <div>
+        <p id="para" >
+            This is some text. This is some text. This is some text. This is some text. This
+            is some text. This is some text. This is some text. This is some text. This is some
+            text. This is some text. This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text. This is some text. This
+            is some text. This is some text.
+        </p>
+    </div>
+</div>
+</body>
+</html>
