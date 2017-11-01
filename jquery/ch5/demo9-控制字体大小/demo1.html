@@ -19,9 +19,15 @@
 
                  var cName = $(this).attr("class");
                         if(cName=="bigger"){
-                            textFontSize+=2;
+                            if(textFontSize<=22){
+                                textFontSize+=2;
+                            }
+
                         }else if(cName=="smaller"){
-                            textFontSize-=2;
+                            if(textFontSize>=12){
+                                textFontSize-=2;
+                            }
+
                         }
                         $("#para").css("font-size",textFontSize+unit);
 
