@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="post3.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ch6/jsp/demo4-post/post3.jsp">
+      <file leaf-file-name="post4.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch6/jsp/demo4-post/post4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -41,7 +41,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ch3/3-10设置和获取HTML,文本和值/3-10-4.html" />
         <option value="$PROJECT_DIR$/ch3/3-11 遍历结点树/3-11-1.html" />
         <option value="$PROJECT_DIR$/ch3/3-11 遍历结点树/3-11-2.html" />
         <option value="$PROJECT_DIR$/ch3/3-11 遍历结点树/3-11-3.html" />
@@ -92,6 +91,7 @@
         <option value="$PROJECT_DIR$/ch6/jsp/demo4-post/post1.html" />
         <option value="$PROJECT_DIR$/ch6/jsp/demo4-post/post2.html" />
         <option value="$PROJECT_DIR$/ch6/jsp/demo4-post/post3.html" />
+        <option value="$PROJECT_DIR$/ch6/jsp/demo4-post/post4.html" />
       </list>
     </option>
   </component>
@@ -378,12 +378,12 @@
       <workItem from="1510238149269" duration="1715000" />
       <workItem from="1510497642066" duration="564000" />
       <workItem from="1510583102258" duration="1466000" />
-      <workItem from="1510669546923" duration="643000" />
+      <workItem from="1510669546923" duration="964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147520000" />
+    <option name="totallyTimeSpent" value="147841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,9 +395,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21156661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21156661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -426,13 +427,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch4/7-模拟操作/4-7-4 triggerHandler.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch4/8-其它用法/4-8-3相同事件名称,不同命名空间执行方法.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -784,8 +778,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ch6/jsp/demo4-post/post3.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch6/jsp/demo4-post/post4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
         </state>
       </provider>
