@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--   引入jQuery -->
+    <script src="../scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var str = getFormatDate();
+            console.log(str);
+            alert(str);
+        })
+
+
+
+        function getFormatDate(){
+            var nowDate = new Date();
+            var year = nowDate.getFullYear();
+            var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;
+            var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+            var hour = nowDate.getHours()< 10 ? "0" + nowDate.getHours() : nowDate.getHours();
+            var minute = nowDate.getMinutes()< 10 ? "0" + nowDate.getMinutes() : nowDate.getMinutes();
+            var second = nowDate.getSeconds()< 10 ? "0" + nowDate.getSeconds() : nowDate.getSeconds();
+            return year + "-" + month + "-" + date+" "+hour+":"+minute+":"+second;
+        }
+    </script>
+</head>
+hello
+
+<body>
+
+</body>
+</html>
