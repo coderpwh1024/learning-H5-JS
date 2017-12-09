@@ -49,6 +49,91 @@
     }
 </style>
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+       var collums = 5;  // 行
+       var rows = 5 ;  // 列
+        var wrap = $("#wrap");
+        var w = wrap.width /rows;
+        var h = wrap.height /collums;
+
+        for(var r=0;r<rows;r++){
+            for (var c=0;c<collums;c++){
+                $('<li><div class="box"></div></li>').width(w).height(h).css({
+                    'left':w*c+'px',
+                    'top':h*r+'px',
+                    'transform': 'scale(0.9) rotate(' + (Math.random() * 40 - 20) + 'deg) ' +
+                    'translateX(' + (30*c-60) + 'px)' +
+                    'translateY(' + (30*r-60) + 'px)'
+                }).find('.box').css({
+                    'background-image':'url(images/' + (r * collums + c) + '.jpg)',
+                    'transform': 'scale(0.9)'
+                }).end().apptendTo(wrap)
+            }
+        }
+        var change = true;
+        wrap.find('li').on('click', function () {
+            if (change == true) {
+                var bgImg = $(this).find('div').css('background-image');
+                var bgLeft = 0;
+                var bgTop = 0;
+                $('#wrap li').each(function (index) {
+                    var $this=$(this);
+                    $(this).delay(40*index).animate({"opacity":0},200, function () {
+                        $this.css({
+                            'transform': ' rotate(0deg) ' +
+                            'translateX(0)' +
+                            'translateY(0)'
+                        });
+                        $this.find('div').css({
+                            'background-image': bgImg,
+                            'background-size': 'auto',
+                            'backgroundPositionX': -bgLeft,
+                            'backgroundPositionY': -bgTop,
+                            'transform': 'scale(1)'
+                        });
+                        bgLeft += 196;
+                        if (bgLeft >= 980) {
+                            bgTop += 100;
+                            bgLeft = 0;
+                        }
+                        $this.animate({"opacity":1},300);
+                    })
+
+
+
+
+                });
+                change = false;
+
+            } else if (change == false) {
+
+                $('#wrap li').each(function (index) {
+                    var c=index %collums;
+                    var r=parseInt(index/collums);
+                    var $this=$(this);
+                    $(this).delay(40*index).animate({"opacity":0},200, function () {
+                        $this.css({
+                            'transform': 'rotate(' + (Math.random() * 40 - 20) + 'deg)' +
+                            'translateX(' + (30*c-60) + 'px)' +
+                            'translateY(' + (30*r-60) + 'px)'
+                        });
+                        $this.find('div').css({
+                            'background-image': 'url(images/' + index + '.jpg)',
+                            'background-size': 'cover',
+                            'transform': 'scale(0.9)'
+                        });
+                        $this.animate({"opacity":1},200);
+                    })
+
+                });
+                change = true;
+            }
+        })
+    })
+</script>
+
+
 <body>
 <canvas id="a"></canvas>
 <script type="text/javascript">
@@ -68,8 +153,21 @@
          ctx.fillStyle = "rgba(0,0,0,0.07)";
          ctx.fillRect(0,0,c.width,c.height);
          ctx.fillStyle = "#0F0";
+         ctx.font=fontsize+"px arial";
+         for(var i=0;i<drop.length;i++){
+             var text1 = string1[Math.floor(Math.random()*string1.length)];
+             ctx.fillText(text1,i*fontsize,drop[i]*fontsize);
+             drop[i]++;
+             if(drop[i]*fontsize>c.length&&Math.random()>0.9){
+                 drop[i]=0;
+             }
+         }
      }
-</script>
+     setInterval(drop,20);
 
+
+</script>
+<ul id="wrap" class="center">
+</ul>
 </body>
 </html>
