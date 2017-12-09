@@ -49,28 +49,36 @@
     }
 </style>
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-       var collums = 5;  // 行
-       var rows = 5 ;  // 列
-        var wrap = $("#wrap");
-        var w = wrap.width /rows;
-        var h = wrap.height /collums;
+<script>
+    $(function () {
+        var collums = 5;//列
+        var rows = 5;//行
+        var wrap = $('#wrap');
+        var w = wrap.width() / rows;
+        var h = wrap.height() / collums;
 
-        for(var r=0;r<rows;r++){
-            for (var c=0;c<collums;c++){
-                $('<li><div class="box"></div></li>').width(w).height(h).css({
-                    'left':w*c+'px',
-                    'top':h*r+'px',
-                    'transform': 'scale(0.9) rotate(' + (Math.random() * 40 - 20) + 'deg) ' +
-                    'translateX(' + (30*c-60) + 'px)' +
-                    'translateY(' + (30*r-60) + 'px)'
-                }).find('.box').css({
-                    'background-image':'url(images/' + (r * collums + c) + '.jpg)',
-                    'transform': 'scale(0.9)'
-                }).end().apptendTo(wrap)
+
+        for (var r = 0; r < rows; r++) {
+            for (var c = 0; c < collums; c++) {
+
+                $('<li><div class="box"></div></li>').width(w).height(h)
+                    .css({
+                        'left': w * c + 'px',
+                        'top': h * r + 'px',
+                        'transform': 'scale(0.9) rotate(' + (Math.random() * 40 - 20) + 'deg) ' +
+                        'translateX(' + (30*c-60) + 'px)' +
+                        'translateY(' + (30*r-60) + 'px)'
+                    })
+                    .find('.box')
+                    .css({
+                        'background-image': 'url(images/' + (r * collums + c) + '.jpg)',
+                        'transform': 'scale(0.9)'
+                    })
+                    .end()
+                    .appendTo(wrap)
             }
         }
+
         var change = true;
         wrap.find('li').on('click', function () {
             if (change == true) {
@@ -133,14 +141,13 @@
     })
 </script>
 
-
 <body>
 <canvas id="a"></canvas>
 <script type="text/javascript">
-     var c = document.getElementById("c");
-     var ctx = c.getContext("2d");
-     c.width = window.innerWidth;
-     c.height = window.innerHeight;
+    var c=document.getElementById("c");
+    var	ctx=c.getContext("2d");
+    c.width=window.innerWidth;
+    c.height=window.innerHeight;
      var string1 = "abcdefghijklmnopqrstuvwxyz";
      string1.split("");
      var fontsize = 20;
