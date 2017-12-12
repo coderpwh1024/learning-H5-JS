@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全屏插件开发</title>
+    <style type="text/css">
+     *{
+         padding:0;
+         margin:0;
+     }
+      html,body{
+          height: 100%;
+
+      }
+     #container,.section,.section{
+         height: 100%;
+
+     }
+      #section0,
+      #section1,
+      #section2,
+      #section3{
+          background-color:#000;
+          background-size: cover;
+          background-position: 50% 50%;
+          text-align:  center;
+          color: white;
+      }
+        #section0{
+            background-image: url(images/1.jpg);
+        }
+        #section1{
+            background-image: url(images/2.jpg);
+        }
+        #section2{
+            background-image: url(images/3.jpg);
+        }
+        #section3{
+            background-image: url(images/4.jpg);
+        }
+        .left{
+            float: left;
+            width: 25%;
+        }
+
+
+
+    </style>
+</head>
+<body>
+ <div id="container" style="width: 400%"  data-PageSwitc>
+      <div class="sections">
+          <div class="section left" id="section0">
+              <h3>this is the page </h3>
+          </div>
+          <div class="section left" id="section1">
+              <h3>this is the page </h3>
+          </div>
+          <div class="section left" id="section2">
+              <h3>this is the page </h3>
+          </div>
+          <div class="section left" id="section3">
+              <h3>this is the page </h3>
+          </div>
+      </div>
+ </div>
+ <script type="text/javascript">
+     $("#container").PageSwithch({
+         dirction:"herizontal"
+     });
+     $("#container").PageSwithch("init");
+
+ </script>
+
+
+</body>
+</html>
