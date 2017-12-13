@@ -5,7 +5,17 @@
     var privateFun = function () {
         //
     }
-    
+    var _prefix = (function (temp) {
+        var aPrefix = ["webkil","Moz","0","ms"],
+            props = "";
+        for(var i in aPrefix){
+            props = aPrefix[i] + "Transition";
+            if(temp.style[props] !=undefined){
+                return "-"+ aPrefix[i].toLowerCase()+"-";
+            }
+        }
+        return false;
+    })(document.createElement(PageSwitch));
     
     var PageSwitch = (function () {
         function PageSwith (element,options) {
@@ -18,11 +28,13 @@
             init:function () {
                 var me = this;
                 me.selectors = me.settings.selectors;
-                me.selectors = me.selectors.sections;
-                me.section = me.selectors.section;
+                me.sections = me.element.find(me.element.selectors.sections);
+                me.section = me.sections.find(me.selectors.section);
                 me.direction = me.settings.direction == "vertical"? true:false;
                 me.pagesCount = me.pagesCount();
                 me.index = (me.settings.index>=0 && me.settings.index<pagesCount)?me.settings.index:0;
+
+                me.canScroll =true;
                 if(!me.direction){
                     me._initLayout();
                 }
@@ -71,12 +83,13 @@
             _initPaging :function () {
               var me = this;
               pageClass = me.selectors.page.substring(1);
-              activeClass = me.selectors.active.substring(1);
+              me.activeClass = me.selectors.active.substring(1);
 
               var pageHtml = "<ul class='+pagesClass+'>"
                for(var i=0;i<me.pagesCount;i++){
                   pageHtml +="<li></li>";
                }
+               pageHtml+="</ul>"
                me.element.append(pageHtml);
                 var pages = me.element.find(me.selectors.page);
                 me.pageItem = pages.find("li");
@@ -97,12 +110,16 @@
                      me._scrollpage();
                  });
                  me.element.on("mousewheel DOMMouseScroll",function (e) {
-                     var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
-                     if(delta>0&&(me.index && !me.settings.loop ||me.settings.loop)){
-                         me.prev();
-                     }else if(delta<0 &&(me.index<(me.pagesCount-1) && !me.settings.loop || me.settings.loop)){
-                        me.next();
+                     if(me.canScroll){
+                         var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+                         if(delta>0&&(me.index && !me.settings.loop ||me.settings.loop)){
+                             me.prev();
+                         }else if(delta<0 &&(me.index<(me.pagesCount-1) && !me.settings.loop || me.settings.loop)){
+                             me.next();
+                         }
                      }
+
+
                  });
                  if(me.settings.keyboard){
                      $(window).on("keydown",function (e) {
@@ -125,13 +142,39 @@
                        }
                  });
                 me.sections.on("transitioned webkitTranssitionEnd oTransitionEnd otransitionend",function(){
+                    me.canScroll = true;
                      if(me.settings.callback && $.type(me.settings.callback) == "function"){
                          me.settings.callback();
                      }
                 });
+             },
+               /** 说明: 滑动动画*/
+             _scrollpage:function () {
+                 var  me = this,
+                     dest = me.section.eq(me.index).position();
+                 if(!dest) return ;
+                   me.canScroll = false;
 
 
+
+                 if(_prefix){
+                     me.sections.css(_prefix+"transition","all "+me.settings.duration+"ms "+me.settings.easing)
+                     var translate = me.direction? "translateY(-"+dest.top+")":"translateX(-"+dest.left+"px)";
+                     me.sections.css(_prefix+"transform",translate);
+                 }else{
+                     var animateCss = me.direction?{top: - dest.top}:{left:- dest.left};
+                     me.sections.animate(animateCss,me.settings.duration,function () {
+                         if(me.settings.callback && $.type(me.settings.callback) == "function"){
+                             me.settings.callback();
+                         }
+                     });
+                 }
+                 if(me.settings.pagination){
+                     me.pageItem.eq(me.index).addClass(me.activeClass).siblings("li").removeClass(me.activeClass);
+
+                 }
              }
+            
 
         };
         return PageSwith;
@@ -157,14 +200,14 @@
             page:".pages",
             active: ".active"
         },
-        index:0,
-        easing:"ease",
-        duration:500,
-        loop:false,
-        pagination:true,
-        keyboard :true,
-        keyboard:"vertical",  // herizontal
-        callback:""
+        index:0,             // 页面开始的索引
+        easing:"ease",       //  动画滑动
+        duration:500,       // 动画执行时间
+        loop:false,         //  是否循环切换
+        pagination:true,    // 是否进行分页
+        keyboard :true,     // 是否触发键盘事件
+        keyboard:"vertical",  // 滑动方向 herizontal
+        callback:""   // 回调函数
     }
     $(function () {
         $("[data-PageSwitch]").PageSwithch();
