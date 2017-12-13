@@ -9,7 +9,7 @@
     
     var PageSwitch = (function () {
         function PageSwith (element,options) {
-          this.settings = $.extend(true,$.fn.PageSwithch.default,options||{});
+          this.settings = $.extend(true,$.fn.PageSwithch.defaults,options||{});
           this.element = element;
           this.init();
         }
@@ -39,6 +39,27 @@
             switchLength:function () {
                 return this.direction?this.element.height():this.element.width();
              },
+            /**说明:向前滑动即上一页面*/
+            prev:function () {
+                var me = this;
+                if(me.index>0){
+                    me.index --;
+                }else if(me.settings.loop){
+                    me.index = me.pagesCount - 1;
+                }
+                me._scrollPage();
+            },
+             /**说明: 主要针对横屏情况进行页面布局*/
+            next:function () {
+                var me = this;
+                if(me.index<me.pagesCount){
+                    me.index ++;
+                }else if(me.settings.loop){
+                    me.index = 0;
+                }
+                me._scrollPage();
+            },
+
 
              /** 说明:主要针对横屏情况进行页面布局 */
             _initLayout :function () {
@@ -70,7 +91,22 @@
                 }
 
             },
-            _initEvent:function (){}
+             /**说明:初始化插件事件*/
+            _initEvent:function (){
+                 var me = this;
+                 me.element.on("click",me.selectors.pages+"li",function () {
+                     me.index = $(this).index();
+                     me._scrollpage();
+                 });
+                 me.element.on("mousewheel DOMMouseScroll",function (e) {
+                     var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+                     if(delta>0&&(me.index && !me.settings.loop ||me.settings.loop)){
+                         me.prev();
+                     }else if(delta<0 &&(me.index<(me.pagesCount-1) && !me.settings.loop || me.settings.loop)){
+                        me.next();
+                     }
+                 })
+             }
 
         };
         return PageSwith;
@@ -89,7 +125,7 @@
 
         });
     }
-    $.fn.PageSwithch.default = {
+    $.fn.PageSwithch.defaults = {
         selectors :{
             sections:".sections",
             section: ".section",
