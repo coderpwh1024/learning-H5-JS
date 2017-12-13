@@ -59,8 +59,6 @@
                 }
                 me._scrollPage();
             },
-
-
              /** 说明:主要针对横屏情况进行页面布局 */
             _initLayout :function () {
                 var me = this;
@@ -105,7 +103,34 @@
                      }else if(delta<0 &&(me.index<(me.pagesCount-1) && !me.settings.loop || me.settings.loop)){
                         me.next();
                      }
-                 })
+                 });
+                 if(me.settings.keyboard){
+                     $(window).on("keydown",function (e) {
+                         var keyCode = e.keyCode;
+                         if(keyCode==37 ||keyCode == 38){
+                             me.rev();
+                         }else if(keyCode == 39|| keyCode==40){
+                             me.next();
+                         }
+                     });
+                 }
+                 $(window).resize(function () {
+                     var  currentLength = me.switchLength(),
+                         offset = me.settings.direction ? me.section.eq(me.index).offset().top:me.section.eq(me.index).offset().left;
+                       if(Math.abs(offset)>currentLength/2 &&me.index<(me.pagesCount-1)){
+                           me.index++;
+                       }
+                       if(me.index){
+                           me._scrollPage();
+                       }
+                 });
+                me.sections.on("transitioned webkitTranssitionEnd oTransitionEnd otransitionend",function(){
+                     if(me.settings.callback && $.type(me.settings.callback) == "function"){
+                         me.settings.callback();
+                     }
+                });
+
+
              }
 
         };
@@ -137,6 +162,7 @@
         duration:500,
         loop:false,
         pagination:true,
+        keyboard :true,
         keyboard:"vertical",  // herizontal
         callback:""
     }
