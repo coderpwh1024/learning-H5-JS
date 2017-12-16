@@ -1,0 +1,75 @@
+.cube-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  perspective: 2000px;
+  background:#222;
+}
+
+#cube {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+#cube figure {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  background:#222;
+  color:white;
+  div{
+    height:inherit;
+    background-size:cover;
+    background-position:center;
+  }
+}
+
+#cube .front  { transform: rotateY(   0deg ) translateZ( 50vw ); }
+#cube .back   { transform: rotateY( 180deg ) translateZ( 50vw ); background: gold;}
+#cube .right  { transform: rotateY(  90deg ) translateZ( 50vw ); background: dodgerblue;}
+#cube .left   { transform: rotateY( -90deg ) translateZ( 50vw ); background: cadetblue; }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 50vw ); background: mintgreen; }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 50vw ); background: lavender; }
+
+#cube { transform: translateZ( -50vw ); }
+
+#cube { transition: transform 1.5s ease-in-out;}
+
+.button-wrap{
+  position:absolute;
+  bottom:10px;
+  right:12.5%;
+  transform:translateX(12.5%);
+}
+
+article{
+  img{
+    max-height:150px;
+  }
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.button-wrap button {
+    background: white;
+    border: 0px;
+    border-bottom: 3px solid #222;
+    box-shadow: grey 0px 2px 2px 0px;
+    cursor:pointer;
+}
+
+.button-wrap:hover{
+  button:not(:hover){
+    background:rgba(255,255,255,0.6);
+  }
+}
+
+.button-wrap button:focus{
+	box-shadow: dodgerblue 0px 2px 2px 0px;
+	outline:none;
+}
