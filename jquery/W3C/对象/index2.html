@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象循环遍历</title>
+</head>
+<body>
+<p>循环遍历对象数据</p>
+<button type="button" onclick="myfunction()">有种你就点击!</button>
+<p id="demo"></p>
+<script>
+    function myfunction() {
+        var x;
+        var txt = "";
+        person = {firstName: "Bill", lastName: "Gates", age: 18};
+        for (x in person) {
+            txt = txt + " " + person[x];
+        }
+        document.getElementById('demo').innerText = txt;
+    }
+
+</script>
+</body>
+</html>

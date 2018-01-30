@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象创建</title>
+</head>
+<body>
+<script>
+    person = new Object();
+    person.firstName = 'Bill';
+    person.lastName = 'Gates';
+    person.age = 56;
+    person.eyecolor = 'blue';
+    document.write(person.firstName + " is " + person.age + " years old. ");
+</script>
+<br/>
+<script>
+    person = {firstName: "Bill", lastName: "Gates", age: 56, eyecolor: "blue"}
+    document.write(person.firstName + " is " + person.age + " years old.");
+
+</script>
+
+<br/>
+<!--构造器方式-->
+<script type="text/javascript">
+
+    function person(firstName, lastName, age, eyecolor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.eyecolor = eyecolor;
+    }
+    you = new person("Bill", "Gates", 56, "blue");
+    document.write(you.firstName + " is " + you.age + " years old.")
+</script>
+
+<br/>
+<!--属性添加-->
+<script>
+    function person(firstName, lastName, age, eyecolor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.eyecolor = eyecolor;
+        this.changeName = changeName;
+        function changeName(name) {
+            this.lastName = name;
+        }
+    }
+    me = new person("Bill", "Gates", 18, "blue");
+    me.changeName("Are you ok?");
+    document.write(me.lastName);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+</head>
+<body>
+<script>
+    var txt = "Hello world!";
+    document.write(txt.length);
+
+    document.write(txt.toUpperCase())
+</script>
+<br/>
+<script type="text/javascript">
+    var myDate = new Date();
+    myDate.setFullYear(2018, 1, 30);
+    document.write(myDate);
+    document.write("<br/>")
+    var today = new Date();
+    today.setDate(today.getDate() + 5);
+    document.write(today);
+</script>
+<br/>
+<script>
+    var myDate = new Date();
+    myDate.setFullYear(2018, 1, 29);
+    var today = new Date();
+    if (myDate > today) {
+        alert("大于当前时间!");
+    } else {
+        alert("小于当前时间!")
+    }
+
+</script>
+
+
+</body>
+</html>
