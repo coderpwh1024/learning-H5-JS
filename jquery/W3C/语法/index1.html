@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript">
+    document.write("<h1>This is heading</h1>");
+    document.write("<h2>This is pagaraph.</h2>");
+</script>
+<script type="text/javascript">
+    function myFunction() {
+        var x = document.getElementById('demo');
+        x.innerHTML = 'Hello JavaScript！';
+    }
+</script>
+<script type="text/javascript">
+
+    function myFunction2() {
+        var x = document.getElementById('demo2').value;
+        if (x == '' || isNaN(x)) {
+            alert('你输入的不是数字!');
+
+        }
+    }
+
+</script>
+<body>
+<p>
+    您只能在 HTML 输出流中使用 <strong>document.write</strong>。
+    如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+</p>
+<button type="button" onclick="alert('welcome!')">点击这里</button>
+<button type="button" onclick="myFunction()">JavaScript改变世界</button>
+<p id="demo">
+    JavaScript 改变内容!
+</p>
+<h1>JavaScript第一阶段!</h1>
+<p>请输入数字，如果不是数字，浏览器会有提示框!</p>
+<input type="text" id="demo2">
+<button type="button" onclick="myFunction2()">点击这里</button>
+
+
+</body>
+</html>

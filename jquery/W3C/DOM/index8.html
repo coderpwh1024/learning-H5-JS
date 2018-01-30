@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div onmousedown="mDown(this)" onmouseup="mUp(this)"
+     style="background-color: green;width: 120px;height: 220px;padding: 40px;color:#ffffff;">
+    鼠标移动上面去
+</div>
+
+<script type="text/javascript">
+    function mDown(obj) {
+        obj.style.backgroundColor = '#1ec5e5';
+        obj.innerHTML = '向下移动!'
+    }
+    function mUp(obj) {
+        obj.style.backgroundColor = "green";
+        obj.innerHTML = '向上移动'
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <p id="p1">这是一个段落</p>
+    <p id="p2">另外一个段落</p>
+</div>
+<script type="text/javascript">
+    var parten = document.createElement('p')
+    var node = document.createTextNode('这是一个新段落');
+    parten.appendChild(node);
+    var element = document.getElementById('div1')
+    element.appendChild(parten);
+</script>
+
+
+</body>
+</html>
