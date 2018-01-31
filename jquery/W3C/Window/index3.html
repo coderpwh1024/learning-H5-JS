@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function newDoc() {
+            window.location.assign("http://www.w3school.com.cn");
+        }
+    </script>
+
+
+</head>
+<body>
+<script>
+    document.write(location.href);
+    document.write("<br/>");
+    document.write(location.pathname);
+</script>
+<br/>
+<input type="button" onclick="newDoc()" value="加载新文档">
+
+</body>
+</html>
