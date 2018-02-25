@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var main = document.body;
+    //创建链接
+    function createa(url, text) {
+        var a = document.createElement('a');
+        a.href = url;
+        a.style.color = 'red';
+        a.innerHTML = text;
+        main.appendChild(a);
+
+
+    }
+    // 调用函数创建链接
+    createa("https://www.baidu.com","众里寻他千百度，蓦然回首他却灯火阑珊");
+
+</script>
+</body>
+</html>

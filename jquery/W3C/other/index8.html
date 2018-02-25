@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="con">
+    <p>javascript</p>
+    <div>jQuery</div>
+    <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+    var x = document.getElementById('con');
+    document.write("第一个节点:" + x.firstElementChild);
+    document.write("<br/>");
+    document.write("属性名称:" + x.firstChild.nodeName);
+    document.write("<br/>");
+    document.write("属性类型:" + x.firstChild.nodeType);
+    document.write("<br/>");
+    document.write("属性值:" + x.firstChild.nodeValue);
+    document.write("<br/>");
+    document.write("第二个节点:" + x.lastElementChild)
+    document.write("<br/>");
+    document.write("属性值:" + x.lastChild.nodeValue);
+    document.write("<br/>");
+    document.write("属性类型:" + x.lastChild.nodeType);
+    document.write("<br/>");
+    document.write("属性名称:" + x.lastChild.nodeName)
+
+
+</script>
+
+
+</body>
+</html>

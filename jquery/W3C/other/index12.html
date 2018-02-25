@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="test">
+    <li>JavaScript</li>
+    <li>HTML</li>
+</ul>
+<script type="text/javascript">
+    var otest = document.getElementById('test');
+    var node = document.getElementsByTagName('li')[0];
+    var newnode = document.createElement('li');
+    newnode.innerHTML = 'php'
+    otest.insertBefore(newnode, node);
+</script>
+
+</body>
+</html>

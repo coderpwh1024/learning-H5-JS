@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content">
+    <h1>html</h1>
+    <h1>php</h1>
+    <h1>javascript</h1>
+    <h1>jquery</h1>
+    <h1>java</h1>
+</div>
+
+<script type="text/javascript">
+    function clearText() {
+        var content = document.getElementById("content");
+        // 在此完成该函数'
+        var x = content.removeChild(content.childNodes[1]);
+        document.write("删除节点的内容为:" + x.innerHTML);
+
+        // 遍历节点
+        for (var i = 0; i < content.length; i++) {
+            document.write(content[i].nodeName + "<br/>");
+            document.write(content[i].nodeType + "<br/>");
+            document.write(content[i].nodeValue + "<br/>");
+        }
+
+    }
+</script>
+
+<button onclick="clearText()">清除节点内容</button>
+
+</body>
+</html>

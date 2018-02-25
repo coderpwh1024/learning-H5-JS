@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var body = document.body;
+    var input = document.createElement("input");
+    input.type = "button";
+    input.value = '创建一个按钮!';
+    body.appendChild(input);
+
+    document.write("<br/>");
+
+</script>
+
+<script type="text/javascript">
+    var body = document.body;
+    var btn = document.createElement('input');
+    btn.setAttribute("type", "text");
+    btn.setAttribute("name", "p");
+    btn.setAttribute("value", "使用setAttribute");
+    btn.setAttribute("onclick", "javascript:alert('This is a text!');");
+    body.appendChild(btn);
+</script>
+
+
+</body>
+</html>

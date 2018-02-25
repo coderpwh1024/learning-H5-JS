@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>javascript</li>
+    <li>HTML/CSS</li>
+    <li>jQuery</li>
+</ul>
+<script>
+    var node = document.getElementsByTagName("li");
+      for(var i=0;i<node.length;i++){
+          document.write("li["+(i+1)+"]:"+"<br/>"+"节点名称:"+node.nodeName()+"<br/>");
+          document.write("节点类型:"+node.nodeType);
+          document.write("节点值:"+node.nodeValue);
+      }
+
+
+</script>
+
+
+
+</body>
+</html>

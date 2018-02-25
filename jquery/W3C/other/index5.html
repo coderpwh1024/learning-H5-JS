@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+    var arr = new Array();
+    var arr2 = new Array();
+    arr = scoreStr.split(";");
+    for (var i = 0; i < arr.length; i++) {
+        arr2[i] = arr[i].substr(3, 4);
+    }
+    var sum = 0;
+    for (var i = 0; i < arr2.length; i++) {
+        var a = parseInt(arr2[i]);
+        sum = sum + a;
+    }
+    document.write(arr);
+    document.write("<br/>")
+    document.write(arr2);
+    document.write("<br/>")
+    document.write(sum);
+
+    window.open()
+</script>
+
+
+</body>
+</html>

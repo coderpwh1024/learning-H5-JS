@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    javascript
+    <p>javascript</p>
+    <div>jQuery</div>
+    <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+    var node = document.getElementsByTagName('div')[0].childNodes;
+
+    for (var i = 0; i < node.length; i++) {
+        document.write("第" + (i + 1) + "个节点的值是:" + node[i].nodeValue);
+        document.write("第" + (i + 1) + "个节点的名称:" + node[i].nodeName());
+        document.write("第" + (i + 1) + "个节点的属性是:" + node[i].nodeType)
+
+    }
+
+
+</script>
+
+
+</body>
+</html>
