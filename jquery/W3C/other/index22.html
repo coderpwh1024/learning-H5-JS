@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var attime;
+        function clock() {
+            var time = new Date();
+            attime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+            document.getElementById("clock").value = attime;
+        }
+        setInterval(clock, 1000);
+
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="clock" size="50" style="background:#000;color:#00ff00;width:50px;"/>
+</form>
+</body>
+</html>

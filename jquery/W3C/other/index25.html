@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //        function tinfo() {
+        //            var t = setTimeout(alert("Hello!"), 3000);
+        //        }
+        var num = 0;
+        function numCount() {
+            document.getElementById('txt').value = num;
+            num = num + 1;
+            setTimeout("numCount()", 1000);
+        }
+
+
+    </script>
+</head>
+<body>
+<form>
+    <!--<input type="button" value="start" onclick="tinfo()"/>-->
+    <input type="text" id="txt"/>
+    <input type="button" value="Start" onclick="numCount()"/>
+
+
+</form>
+</body>
+</html>

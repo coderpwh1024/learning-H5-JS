@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计时器</title>
+</head>
+<body>
+<script type="text/javascript">
+    var int = setInterval(clock, 100);
+    function clock() {
+        var time = new Date();
+        document.getElementById("clock").value = time;
+    }
+</script>
+<form>
+    <input type="text" id="clock" size="50"/>
+</form>
+
+
+</body>
+</html>
