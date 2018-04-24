@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function mychange() {
+            var x = document.getElementById('frame');
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+
+</head>
+<body>
+请输入英文字符<input type="text" id="frame" onchange="mychange()">
+<p>当您离开输入字段时，会触发将输入文本转换为大写的函数。</p>
+
+
+</body>
+</html>

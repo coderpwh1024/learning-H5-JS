@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p1 id="demo1">Hello world</p1>
+<script type="text/javascript">
+    document.getElementById('demo1').innerText = 'new JavaScript!'
+</script>
+<p>上面的段落被一条 JavaScript 脚本修改了。</p>
+<br/>
+<h1 id="header">old header!</h1>
+<script type="text/javascript">
+    var x = document.getElementById('header');
+    x.innerHTML = 'new header!';
+</script>
+<p>old header 被改变为new header!</p>
+
+
+</body>
+</html>

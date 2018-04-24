@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom树</title>
+</head>
+<body>
+<p id="demo1">demo</p>
+<p>演示:</p>
+<script type="text/javascript">
+    var x = document.getElementById('demo1');
+    document.write("<p>添加的内容是:+" + x.innerHTML + "</p>")
+</script>
+<p>hello World!</p>
+
+<div id="main">
+    <p>The Dom is very userful!</p>
+    <p>演示:<b>getElementsByTagName</b>方法</p>
+</div>
+<script type="text/javascript">
+    var x = document.getElementById("main");
+    var y = x.getElementsByTagName("p");
+    document.write('id为"main"的div中的第一段文本是:' + y[0].innerHTML);
+</script>
+<script type="text/javascript">
+    document.write(new Date())
+</script>
+
+
+</body>
+
+</html>

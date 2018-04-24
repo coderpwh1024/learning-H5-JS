@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script type="text/javascript">
+    var arr = new Array();
+    arr[0] = '雷军';
+    arr[1] = '马化腾';
+    arr[2] = '李彦宏';
+    arr[3] = '马云';
+    for (var i = 0; i < arr.length; i++) {
+        document.write(arr[i] + "<br/>");
+    }
+</script>
+<script type="text/javascript">
+    var person = {
+        firstName: "Bill",
+        lastName: "ABC",
+        id: 6666
+    }
+    document.write(person.firstName + "<br/>");
+    document.write(person.lastName + "<br/>");
+    document.write(person.id);
+    document.write(person['lastName']);
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="checkCookies()">
+<script type="text/javascript">
+    function checkCookies() {
+        if (navigator.cookieEnabled == true) {
+            alert('已经开始使用Cookie');
+        } else {
+            alert('未使用Cookie');
+        }
+    }
+
+</script>
+
+<p> 浏览器已经开始使用Cookie!</p>
+
+</body>
+</html>

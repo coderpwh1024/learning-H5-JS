@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    person = new Object();
+    person.firstName = 'Bill';
+    person.age = "18";
+    person.lastName = "abc";
+    document.write(person.firstName + "is" + person.lastName + "is" + person['age']);
+</script>
+
+
+</body>
+</html>

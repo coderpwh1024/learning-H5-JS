@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function myfunction() {
+            document.getElementById('demo1').innerHTML = '哥写的JavaScript!'
+        }
+    </script>
+    <script type="text/javascript">
+        function myfunction2() {
+            document.getElementById('demo2').innerHTML = 'JavaScript change world!'
+        }
+    </script>
+    <script type="text/javascript">
+        document.write("<p>JavaScript!</p>")
+    </script>
+
+
+
+
+</head>
+
+
+<body>
+<h1>My Web page</h1>
+<p id="demo1">a Paragraph.</p>
+<button type="button" onclick="myfunction()">点击这里</button>
+
+<p id="demo2">my JavaScript code</p>
+<button type="button" onclick="myfunction2()">改变世界</button>
+
+
+</body>
+</html>

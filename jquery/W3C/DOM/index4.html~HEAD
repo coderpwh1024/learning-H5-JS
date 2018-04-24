@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScirpt事件</title>
+    <script type="text/javascript">
+        function change(id) {
+            id.innerHTML = 'Are you ok?'
+        }
+
+    </script>
+    <script type="text/javascript">
+        function displayDate() {
+            document.getElementById('id3').innerHTML = new Date();
+        }
+
+    </script>
+
+</head>
+<body>
+<h1 onclick="this.innerHTML='Thank you!'">点击看看!</h1>
+<br/>
+<h2 onclick="change(this)">点击改变</h2>
+<br/>
+<p>点击按钮就可以执行 <em>displayDate()</em> 函数。</p>
+
+<button onclick="displayDate()">点击这里</button>
+<p id="id3"></p>
+<br/>
+<br/>
+
+<p>点击按钮就可以执行 <em>displayDate()</em> 函数。</p>
+
+<button id="myBtn">函数式</button>
+<script type="text/javascript">
+    document.getElementById('myBtn').onclick = function () {
+        displayDate();
+    }
+    function displayDate() {
+        document.getElementById('id4').innerHTML = new Date();
+    }
+</script>
+
+<p id="id4"></p>
+
+
+</body>
+</html>

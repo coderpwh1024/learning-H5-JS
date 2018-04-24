@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="p1">Hello World!</p>
+<p id="p2">Helo World!</p>
+<script type="text/javascript">
+    document.getElementById("p2").style.color = "blue";
+    document.getElementById("p2").style.fontFamily = "Arial";
+    document.getElementById("p2").style.fontSize = "larger"
+</script>
+<br/>
+<h1 id="id1">This is a Header</h1>
+<button type="button" onclick="document.getElementById('id1').style.color='red'">点击改变颜色</button>
+</body>
+</html>
