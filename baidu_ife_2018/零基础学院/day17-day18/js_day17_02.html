@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过除2取余的方法来把十进制整数转化为二进制</title>
+</head>
+<body>
+<input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+<button id="trans-btn" onclick="dec2bin()">转化为二进制</button>
+<p id="result">运算结果</p>
+
+<script type="text/javascript">
+    function dec2bin(decNumber) {
+        var a = document.getElementById('dec-number').value;
+        document.getElementById('result').innerHTML =  Number(a).toString(2);
+    }
+</script>
+
+
+</body>
+</html>

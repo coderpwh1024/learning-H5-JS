@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+<input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+<button id="trans-btn" onclick="dec2bin()">转化为二进制</button>
+<p id="result">运算结果</p>
+<script type="text/javascript">
+     function dec2bin(decNumber) {
+          var a = document.getElementById('dec-number').value;
+         if(Number(a)<0){
+             alert("请输入一个非负的数字");
+             console.log(a);
+             document.getElementById('dec-number').value=0;
+         }
+        var b =  document.getElementById('bin-bit').value;
+         document.getElementById('bin-bit').value= Number(a).toString(2);
+     }
+</script>
+
+
+</body>
+</html>
