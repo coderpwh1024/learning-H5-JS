@@ -38,23 +38,41 @@
     function getAllListItem() {
         // 返回页面中所有li标签
         var a = document.getElementsByTagName("li");
+        console.log("a");
     }
 
     function findAllHtmlSpanInOneSection(sectionId) {
         // 返回某个section下所有span中内容为HTML的span标签
-        document.getElementById("sectionId").innerHTML="<spane></span>"
+        var arr = [];
+        var a = document.getElementById(sectionId).getElementsByTagName('span');
+        for (var i in a) {
+            if (a[i].innerText == 'HTML') {
+                arr.push(a[i]);
+            }
+        }
+        console.log(arr);
     }
 
     function findListItem(sectionId, spanCont) {
         // 返回某个section下，所有所包含span内容为spanCont的LI标签
-
-          var a = document.getElementById("sectionId");
-          a.childNodes("span");
-
+        var arr = [];
+        var a = document.getElementById(sectionId).getElementsByTagName('span');
+        for (var i in a) {
+            if (a[i].innerText == spanCont) {
+                arr.push(a[i].parentNode)
+            }
+        }
+        console.log(arr);
     }
 
     function getActiveLinkContent(sectionId) {
         // 返回某个section下，class为active的链接中包含的文字内容
+        var classActive = document.getElementById(sectionId).getElementsByTagName('a');
+        for (var i in classActive) {
+            if (classActive[i].class == 'active') {
+                console.log(classActive[i].innerText);
+            }
+        }
     }
 
 </script>
