@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="../../../scripts/jquery.js" type="text/javascript"></script>-->
+</head>
+<script type="text/javascript">
+      function  fun1(name) {
+          var a = document.getElementById('name').value;
+          console.log(a);
+      }
+     // 回车事件
+       document. onkeydown = function (e) {
+            if(!e){
+                e = window.event;
+            }
+           if((e.keyCode||e.which)==13){
+               fun1();
+           }
+       }
+       // esc 清除
+
+      document.keydown = function(e){
+          if(!e){
+              e = window.event;
+          }
+          if(e.keyCode==27){
+               document.getElementById('name').value='';
+               console.log("a:"+1);
+          }
+      }
+
+
+
+     /* document.onkeydown = function(e){
+          if(!e){
+              e = window.event;
+          }
+          if((e.keyCode || e.which) == 13){
+              checkLogin();
+          }
+      }*/
+     /* $('#search_input').bind('keyup', function(event) {
+          if (event.keyCode == "13") {
+              //回车执行查询
+              $('#search_button').click();
+          }
+      });*/
+
+</script>
+<body>
+<input id="name" type="text">
+<button id="submit-btn" onclick="fun1(name)">Submit</button>
+</body>
+</html>
