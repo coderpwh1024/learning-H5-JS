@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+<button id="fade-btn">淡出</button>
+
+<script type="text/javascript">
+    var btn = document.getElementById('fade-btn');
+    var obj = document.getElementById('fade-obj');
+     // 透明属性
+    obj.style.opacity = 1;
+    // 淡出功能
+    function slideout() {
+        var opac = parseFloat(obj.style.opacity);
+        if (opac === 0) {
+            // 动画结束变成淡入
+            btn.display = false;
+            btn.innerHTML = '淡入';
+            // 在此点击就是淡出功能
+            btn.onclick = function () {
+                slideIn();
+            }
+            return true;
+        }
+        if (opac !== 0) {
+            opac = opac - 0.1;
+            // 动画过程中，按钮不能使用
+            btn.disabled = true;
+        }
+        obj.style.opacity = opac;
+        //利用setTimeout来展示动画
+        setTimeout(slideout, 50);
+
+    }
+
+    // 淡入功能
+    function slideIn() {
+        var opac = parseFloat(obj.style.opacity);
+        if (opac === 1) {
+
+            // 动画结束后变为淡出功能
+            btn.display = false;
+            btn.innerHTML = '淡出';
+            btn.onclick = function () {
+                slideout();
+            }
+            return true;
+        }
+        if (opac !== 1) {
+            opac = opac + 0.1;
+            // 动画过程中不准点击
+            btn.display = true;
+        }
+        obj.style.opacity = opac;
+        setTimeout(slideIn, 50);
+    }
+    btn.onclick = function () {
+        slideout();
+    }
+
+</script>
+</body>
+</html>
