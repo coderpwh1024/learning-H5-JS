@@ -12,9 +12,17 @@
 <script type="text/javascript">
        function  schoool() {
           var a =  document.getElementById('school-select');
-           document.getElementById('school').innerHTML=a;
+          var b = document.getElementById('company-select');
+           a.style.display='block';
+           b.style.display='none';
        }
 
+       function company () {
+           var a =  document.getElementById('school-select');
+           var b = document.getElementById('company-select');
+           a.style.display='none';
+           b.style.display='block';
+       }
 </script>
 <body>
 <label>
@@ -22,7 +30,7 @@
     School
 </label>
 <label>
-    <input id="company" name="status" type="radio">
+    <input id="company" name="status" type="radio" onclick="company()">
     Company
 </label>
 

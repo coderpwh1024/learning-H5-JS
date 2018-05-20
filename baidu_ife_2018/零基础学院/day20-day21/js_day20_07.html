@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #rabbit{
+            width: 2302px;
+            height: 380px;
+            /*background: url(rabbit.png) no-repeat 0px -480px;*/
+        }
+    </style>
+    <script>
+        window.onload = function(){
+
+            /** rabbit动画**/
+            var imgUrl = 'http://ife.baidu.com/2016/static/img/erik_ce204002.jpg';
+            var positions = ["0 -50", "-230 -5900", "-489 -689", "-524 -480", "-788 -200", "-573 -150"];
+            var ele = document.getElementById('rabbit');
+
+            // console.log(positions[0]);
+            // console.log(typeof(positions[0]));
+            // console.log(positions[0].split(' '));
+
+            animation(ele,positions,imgUrl);
+            function animation(ele,positions,imgUrl){
+
+                ele.style.backgroundImage = 'url('+imgUrl+')';
+                ele.style.backgroundRepeat = 'no-repeat';
+
+                var index = 0;
+
+                function run(){
+
+                    var position = positions[index].split(' ');
+                    ele.style.backgroundPosition = position[0]+'px '+position[1]+'px';
+                    index++;
+                    if (index >= positions.length) {
+                        index = 0;
+                    }
+                    //console.log(position[0]+'px '+position[1]+'px');
+                    setTimeout(run,500);
+
+                }
+                run();
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="rabbit"></div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*this.hide = function(obj) {
+     var num = 10;
+     if (Fadeflag) {
+     var st = setInterval(function(){
+     num--;
+     Fadeflag = false;
+     obj.style.opacity = num/10;
+     if (num<=0) {
+     clearInterval(st);
+     Fadeflag = true;
+     }
+     },30);
+     }
+     }*/
+
+    var Fadeflag = true;
+    function fadeout() {
+        var num = 10;
+        if (Fadeflag) {
+            var st = setInterval(function () {
+                num--;
+                Fadeflag = false;
+                var a = document.getElementById('fade-obj');
+                a.style.opacity = num / 10;
+                if (num < 0) {
+                    setInterval(st);
+                    Fadeflag = true;
+                    var b = document.getElementById('fade-btn');
+                    b.style.display== "block";
+                }
+            })
+        }
+    }
+
+    // 淡入
+    function fadein() {
+        var num = 0;
+        if (Fadeflag) {
+            var st = setInterval(function () {
+                num++;
+                Fadeflag = false;
+                var a = document.getElementById('fade-obj');
+                a.style.opacity = num / 10;
+                if (num >= 10) {
+                    setInterval(st);
+                    Fadeflag = true;
+                }
+            })
+        }
+    }
+
+
+</script>
+
+
+<div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+<button id="fade-btn" onclick="fadeout()">淡出</button>
+<button id="fadein-btn" onclick='fadein()'>淡入</button>
+</body>
+</html>
