@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div>
+    <button onclick="fun1()">获取当前选中输入的内容长度</button>
+    <button onclick="fun2()">当前选中输入中的第3个字符</button>
+    <button onclick="fun3()">把两个输入框的文字连接在一起输出（concat）</button>
+    <button onclick="fun4()">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button onclick="fun5()">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button onclick="fun6()">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button onclick="fun7()">当前选中输入框的行数</button>
+    <button onclick="fun8()">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button onclick="fun9()">把所选输入框中的内容全部转为大写</button>
+    <button onclick="fun10()">把所选输入框中的内容全部转为小写</button>
+    <button onclick="fun11()">把所选输入框中内容的半角空格全部去除</button>
+    <button onclick="fun12()">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+<script type="text/javascript">
+
+    function fun1() {
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+        var c = document.getElementById('num-a').value;
+        var d = document.getElementById('num-b').value;
+
+        var result = document.getElementById('result');
+        result.innerHTML = a.length + " ," + b.length + " , " + c.length + " ," + d.length;
+    }
+
+
+    function fun2() {
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+        var c = document.getElementById('num-a').value;
+        var d = document.getElementById('num-b').value;
+
+        var result = document.getElementById('result');
+        a.indexOf(3)
+        result.innerHTML = a.charAt(2) + " ," + b.charAt(2);
+
+    }
+    // 字符串拼接
+    function fun3() {
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+
+        var result = document.getElementById('result');
+        result.innerHTML = a.concat(b);
+
+    }
+
+    //输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）
+    function fun4() {
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+
+        var result = document.getElementById('result');
+        result.innerHTML = a.indexOf(b);
+    }
+    // 输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）
+    function fun5() {
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+
+        var result = document.getElementById('result');
+        result.innerHTML = b.lastIndexOf(a);
+    }
+
+
+    // 使用slice获取选中输入框内容的部分内容，参数为num-a及num-b
+    function fun6() {
+        var c = document.getElementById('num-a').value;
+        var d = document.getElementById('num-b').value;
+        var result = document.getElementById('result');
+        c.slice(0);
+        d.slice(0);
+        result.innerHTML = c.slice(0) + " ," + d.slice(0)
+    }
+
+    // 当前选中输入框的行数
+    function fun7() {
+        var a = document.getElementById('str-a').value.split(/\n/).length;
+        var b = document.getElementById('str-b').value.split(/\n/).length;
+
+        var result = document.getElementById('result');
+
+        result.innerHTML = 'A:' + a + ", B:" + b;
+    }
+
+    // 使用substr获取选中输入框内容的子字符串，参数为num-a及num-b
+    function fun8() {
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+
+        var result = document.getElementById('result');
+
+        result.innerHTML = "A:" + a.substr(3) + ",B:" + b.substr(3);
+
+    }
+
+    // 把所选输入框中的内容全部转为大写
+    function fun9() {
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+
+        var result = document.getElementById('result');
+        result.innerHTML = a.toLocaleUpperCase() + ",B:" + b.toLocaleUpperCase();
+    }
+    // 小写
+    function fun10() {
+
+        result.innerHTML = a.toLocaleLowerCase() + " ,B:" + b.toLocaleLowerCase();
+    }
+
+    //  除掉半角空格
+    function fun11() {
+
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+
+        var result = document.getElementById('result');
+
+        a.replace(/(^\s*)|(\s*$)/g, "").replace(/(^　*)|(　*$)/g, "")
+        /* var value = this.replace(/(^\s*)|(\s*$)/g, "");
+         return value.replace(/(^　*)|(　*$)/g, "");*/
+
+        result.innerHTML = a.replace(/(^\s*)|(\s*$)/g, "").replace(/(^　*)|(　*$)/g, "") + ", B：" + b.replace(/(^\s*)|(\s*$)/g, "").replace(/(^　*)|(　*$)/g, "");
+    }
+
+    // 把所选输入框中内容的a全部替换成另外一个输入框中的内容
+    function fun12(){
+
+        var a = document.getElementById('str-a').value;
+        var b = document.getElementById('str-b').value;
+
+        var result = document.getElementById('result');
+
+         a.replace(/a/,b);
+         b.replace(/a/,a);
+         result.innerHTML='A:'+a.replace(/a/,b)+" <br/> B:"+ b.replace(/a/,a);
+
+    }
+
+
+</script>
+
+
+</body>
+</html>
