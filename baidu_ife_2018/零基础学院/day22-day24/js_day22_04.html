@@ -61,33 +61,69 @@
 
     // 假设id和name均不会重复，根据输入name找到对应的id
     function findIdByName(name) {
-      var  len = tree.length;
-      for(var i=0;i<len;i++){
+        function getListWithDLR(root) {
+            if (root != null) {
+                if (root.name === name)
+                    console.log(root.id);
+                getListWithDLR(root.left);
+                getListWithDLR(root.right);
+            }
+            ;
+        }
 
-      }
+        getListWithDLR(tree);
     }
 
     // 假设id和name均不会重复，根据输入id找到对应的name
     function findNameById(id) {
+        function getListWithDLR(root) {
+            if (root != null) {
+                if (root.id === id)
+                    console.log(root.name);
+                getListWithDLR(root.left);
+                getListWithDLR(root.right);
 
+            }
+        }
+
+        getListWithDLR(tree);
     }
 
     // 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
-    function getListWithDLR() {
-
+    function getListWithDLR(root) {
+        if (root != null) {
+            console.log(root.name);
+            getListWithDLR(root.left);
+            getListWithDLR(root.right);
+        }
     }
-
+    getListWithDLR(tree);
     // 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
-    function getListWithLDR() {
-
+    function getListWithLDR(root) {
+        if (root != null) {
+            getListWithDLR(root.left);
+            console.log(root.name);
+            getListWithDLR(root.right);
+        }
     }
+    getListWithLDR(tree);
 
     // 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
-    function getListWithLRD() {
+    function getListWithLRD(root) {
+        if (root != null) {
+            getListWithDLR(root.left);
 
+            getListWithDLR(root.right);
+            console.log(root.name);
+        }
     }
+    getListWithLRD(tree);
 </script>
-<button onclick="findIdByName()">事件1</button>
+<button onclick="findIdByName('Simon')">事件1</button>
+<button onclick="findNameById(1)">事件2</button>
+<button onclick="getListWithDLR(tree)">事件3</button>
+<button onclick="getListWithLDR(tree)">事件4</button>
+<button onclick="getListWithLRD(tree)">事件5</button>
 
 </body>
 </html>
