@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="stack-input" type="text">
+<p id="stack-cont">栈内容：apple-gt;pear</p>
+<p id="stack-outcont">出栈内容:</p>
+<button id="push-btn" onclick="pushbtn()">进栈</button>
+<button id="pop-btn" onclick="popbtn()">退栈</button>
+<button id="font-btn" onclick="fontbtn()">打印栈顶元素内容</button>
+<button id="empty-btn" onclick="empty()">判断栈是否为空</button>
+
+<script>
+
+    var stack = ["apple", "pear"];
+    function pushbtn() {
+        var content = document.getElementById('stack-cont');
+        content.innerHTML += '<br/>入栈前内容: ';
+       content.innerHTML += stack;
+        content.innerHTML += '<br/>入栈: <br/>';
+        stack.push("hello");
+        content.innerHTML +=stack+"<br/>";
+        stack.push("world");
+        content.innerHTML +=stack+"<br/>";
+        stack.push("JavaScript");
+        content.innerHTML +=stack+"<br/>";
+    }
+
+     // 出栈
+    function popbtn () {
+       var content =  document.getElementById('stack-outcont');
+        console.log("出栈，后进先出");
+
+        content.innerHTML+='<br/>出栈，后进先出<br/>'
+        stack.pop();
+        content.innerHTML+=stack+"<br/>";
+        stack.pop();
+        content.innerHTML+=stack+"<br/>";
+        stack.pop();
+        content.innerHTML+=stack+"<br/>";
+        stack.pop();
+        content.innerHTML+=stack+"<br/>";
+        stack.pop();
+        content.innerHTML+=stack+"<br/>";
+        stack.pop();
+        content.innerHTML+=stack+"<br/>";
+
+    }
+
+     // 打印栈顶元素
+    function fontbtn () {
+        console.log(stack[stack.length-1]);
+    }
+    function empty() {
+        if(stack.length<=0){
+            console.log("为空")
+        }else{
+            console.log("非空")；
+        }
+    }
+
+
+</script>
+</body>
+</html>
