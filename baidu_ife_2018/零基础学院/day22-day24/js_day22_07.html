@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fun1() {
+        var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+        var  temp;
+        for(var i=0;i<arr.length;i++){
+            for(var j=0;j<i;j++){
+                if(arr[i]>arr[j]){
+                    temp = arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        console.log(arr);
+    }
+    fun1();
+
+     // 排序 调用 数组api方法
+    function fun2(){
+        var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+        arr.sort();
+        console.log(arr);
+        for(var i=arr.length-1;i>=0;i--){
+            console.log(arr[i]);
+        }
+    }
+  fun2()
+
+    function fun22(){
+//        var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane',];
+        var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane','abc','ad'];
+         var temp ;
+
+         for(var i=0;i<arr.length;i++){
+             for(var j=0;j<i;j++){
+                 if(arr[i].charAt(0)>arr[j].charAt(0)){
+                     temp = arr[i];
+                     arr[i]=arr[j];
+                     arr[j]=temp;
+                 }
+             }
+         }
+      console.log(arr);
+
+    }
+fun22();
+    function fun3(){
+        var arr = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+        var temp ;
+         for(var i=0;i<arr.length;i++){
+             for(var j=0;j<i;j++){
+                 if(arr[i][1]>arr[j][0]){
+                  temp = arr[i];
+                  arr[i]=arr[j];
+                  arr[j]=temp;
+                 }
+             }
+         }
+        console.log(arr);
+    }
+
+    fun3();
+    function  fun4() {
+        var arr = [
+            {
+                id: 1,
+                name: 'candy',
+                value: 40
+            }, {
+                id: 2,
+                name: 'Simon',
+                value: 50
+            }, {
+                id: 3,
+                name: 'Tony',
+                value: 45
+            }, {
+                id: 4,
+                name: 'Annie',
+                value: 60
+            }
+        ];
+
+        var temp;
+        for(var i=0;i<arr.length;i++){
+             for(var j=0;j<i;j++){
+                 if(arr[i].value>arr[j].value){
+                     temp = arr[i];
+                     arr[i] = arr[j];
+                     arr[j]=temp;
+                 }
+             }
+        }
+        console.log(arr)
+    }
+
+    fun4();
+    
+    function  fun5() {
+        var scoreObject = {
+            "Tony": {
+                "Math": 95,
+                "English": 79,
+                "Music": 68
+            },
+            "Simon": {
+                "Math": 100,
+                "English": 95,
+                "Music": 98
+            },
+            "Annie": {
+                "Math": 54,
+                "English": 65,
+                "Music": 88
+            }
+        }
+
+        var arr= [];
+        for (var i in scoreObject){
+          arr.push(i,scoreObject[i].Math,scoreObject[i].English,scoreObject[i].Music);
+        }
+        console.log(arr);
+
+    }
+    fun5();
+
+    function fun6(){
+        var menuArr = [
+            [1, "Area1", -1],
+            [2, "Area2", -1],
+            [3, "Area1-1", 1],
+            [4, "Area1-2", 1],
+            [5, "Area2-1", 2],
+            [6, "Area2-2", 2],
+            [7, "Area1-2-3", 4],
+            [8, "Area2-2-1", 6],
+        ];
+        var subArrToSubObj = menuArr.map(function (arr ,i){
+            return {key:arr[0],obj:{name:arr[1]},parentKey:arr[2]};
+        })
+
+            var menuObject = {};
+            var tempObjArr = subArrToSubObj;
+            var len = tempObjArr.length;
+
+            for(var i=len-2;i>=0;i--){
+                for(j=len-1;j>=i;j--){
+                    if(tempObjArr[i].key == tempObjArr[j].parentKey){
+
+                         if(tempObjArr[i].obj["subMenu"]){
+                             tempObjArr[i].obj["subMenu"][tempObjArr[j].key]=tempObjArr[j].obj;
+                         }else{
+                          tempObjArr[i].obj["subMenu"]={};
+                          tempObjArr[i].obj["subMenu"][tempObjArr[j].key]=tempObjArr[j].obj;
+                         }
+                    }
+                }
+            }
+        for(var i in tempObjArr){
+                if(tempObjArr[i].parentKey==-1){
+                    menuObject[tempObjArr[i].key]=tempObjArr[i].obj;
+                }
+        }
+      console.log(menuObject);
+
+    }
+    fun6();
+
+
+    
+</script>
+
+
+</body>
+</html>
