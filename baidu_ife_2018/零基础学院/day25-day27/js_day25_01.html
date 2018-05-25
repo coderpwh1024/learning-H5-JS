@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="date"></p>
+
+<br/>
+<p>输入当前日期返回具体周期</p>
+<input id="date2"/> <button id="btn" onclick="fun2()">显示</button>
+<p id="date3"></p>
+
+
+<script type="text/javascript">
+
+     function  fun1() {
+          var date = new Date();
+          this.year = date.getFullYear();
+          this.month = date.getMonth()+1;
+          this.date = date.getDate();
+          this.day = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六")[date.getDay()];
+         this.hour = date.getHours()<10 ? "0"+date.getHours(): date.getHours();
+         this.minute = date.getMinutes()<10? "0"+date.getMinutes() : date.getMinutes();
+         this.second = date.getSeconds()<10? "0"+date.getSeconds():date.getSeconds();
+         var currentTime = this.year+" 年 "+this.month+" 月 "+this.date+" 日 "+this.day+" "+this.hour+" 时 "+this.minute+" 分 "+this.second+" 秒 ";
+        var nowdate =  document.getElementById('date');
+        nowdate.innerHTML = currentTime;
+     }
+     fun1();
+
+     function  fun2() {
+         var d = document.getElementById('date2').value;
+         console.log(d);
+         var date = new Date(d);
+         console.log(date);
+
+         var week;
+         if(date.getDay()==0) week="周日"
+         if(date.getDay()==1) week="周一"
+         if(date.getDay()==2) week="周二"
+         if(date.getDay()==3) week="周三"
+         if(date.getDay()==4) week="周四"
+         if(date.getDay()==5) week="周五"
+         if(date.getDay()==6) week="周六"
+         console.log(week);
+         var we = document.getElementById('date3');
+         we.innerHTML=week;
+         return week;
+     }
+
+</script>
+
+
+
+
+
+</body>
+</html>
