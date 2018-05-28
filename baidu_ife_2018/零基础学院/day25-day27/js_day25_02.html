@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .part1,
+        .part2,
+        .part3,
+        .part4 {
+            width: 100%;
+            border: 1px solid green;
+            padding: 10px 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<!--<select id="year-select">
+    <option value="2000">2000</option>
+    <option value="2001">2001</option>
+    <option value="2002">2002</option>
+    ……
+    <option value="2032">2002</option>
+</select>
+
+<select id="month-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    ……
+    <option value="12">12</option>
+</select>
+
+<select id="day-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    ……
+    <option value="31">31</option>
+</select>
+
+<select id="hour-select">
+    <option value="0">00</option>
+    <option value="1">01</option>
+    ……
+    <option value="23">23</option>
+</select>
+
+<select id="minite-select">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    ……
+    <option>59</option>
+</select>
+
+<select id="second-select">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    ……
+    <option>59</option>
+</select>
+
+<p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>-->
+<div class="part4">
+    <h3>编码4：有一堆Select用于选择日期和时间，在选择后，实时在 id 为 result-wrapper 的 p 标签中显示所选时间和当前时间的差值</h3>
+    <div>
+        <select id="year-select">
+        </select>
+        <select id="month-select">
+        </select>
+        <select id="day-select">
+        </select>
+        <select id="hour-select">
+        </select>
+        <select id="minite-select">
+        </select>分
+        <select id="second-select">
+        </select>
+        <p id="result-wrapper"></p>
+    </div>
+</div>
+
+<script>
+    var yearSelector = document.getElementById('year-select'),
+        monthSelector = document.getElementById('month-select'),
+        daySelector = document.getElementById('day-select'),
+        hourSelector = document.getElementById('hour-select'),
+        miniteSelector = document.getElementById('minite-select'),
+        secondSelector = document.getElementById('second-select'),
+        p4 = document.getElementById('result-wrapper');
+
+    function addZero(z) {
+        if (z < 10) {
+            z = "0" + z;
+        }
+        return z;
+    }
+
+    //判断星期
+    function checkWeek(day) {
+        switch (day) {
+            case 0:
+                day = "星期日";
+                break;
+            case 1:
+                day = "星期一";
+                break;
+            case 2:
+                day = "星期二";
+                break;
+            case 3:
+                day = "星期三";
+                break;
+            case 4:
+                day = "星期四";
+                break;
+            case 5:
+                day = "星期五";
+                break;
+            case 6:
+                day = "星期六";
+                break;
+        }
+        return day;
+    }
+    // 自动补全0
+    function addZero(z) {
+        if (z < 10) {
+            z = "0" + z;
+        }
+        return z;
+    }
+    //动态生成option元素
+    function createOptionElement(ele, firstVal, endVal) {
+        for (; firstVal <= endVal; firstVal++) {
+            ele.options.add(new Option(addZero(firstVal), firstVal));
+        }
+    }
+    createOptionElement(yearSelector, 2000, 2050);
+    createOptionElement(monthSelector, 1, 12);
+    var year = yearSelector.value;
+    var month = monthSelector.value;
+    setDay(year, month);
+    createOptionElement(hourSelector, 0, 23);
+    createOptionElement(miniteSelector, 0, 59);
+    createOptionElement(secondSelector, 0, 59);
+
+    //判断闰年
+    function isLeapYear(year) {
+        return (year % 100 != 0 && year % 4 == 0) || (year % 400 == 0);
+    }
+    //动态添加日
+    function setDay(y, m) {
+        switch (m) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+                daySelector.innerHTML = "";
+                createOptionElement(daySelector, 1, 31);
+                break;
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+                daySelector.innerHTML = "";
+                createOptionElement(daySelector, 1, 30);
+                break;
+            case "2":
+                daySelector.innerHTML = "";
+                isLeapYear(y) ? createOptionElement(daySelector, 1, 28) : createOptionElement(daySelector, 1, 29);
+                break;
+        }
+    }
+
+    var day = daySelector.value,
+        hour = hourSelector.value,
+        minite = miniteSelector.value,
+        second = secondSelector.value,
+        week = "",
+        tip = "",
+        pOldStr = "",
+        pNewStr = "";
+
+    countDifferDate();
+
+    function countDifferDate() {
+
+
+        var nowDateTime = new Date(),
+            newDateTimeString = year + "/" + month + "/" + day + " " + hour + ":" + minite + ":" + second,
+            newDateTime = new Date(newDateTimeString);
+        // console.log(newDateTimeString );
+        var weekNum = newDateTime.getDay();
+        week = checkWeek(weekNum);
+        //计算剩余天数
+        var dateBetween = newDateTime.getTime() - nowDateTime.getTime();
+        if (dateBetween >= 0) {
+            dateBetween = newDateTime.getTime() - nowDateTime.getTime();
+            tip = "还有:";
+        } else {
+            dateBetween = nowDateTime.getTime() - newDateTime.getTime();
+            tip = "过去了:";
+        }
+        var betweenDays = Math.floor(dateBetween / (24 * 3600 * 1000));
+        //计算天数后剩余的毫秒数
+        var afterDay = dateBetween % (24 * 3600 * 1000);
+        //计算剩余小时数
+        var betweenHours = Math.floor(afterDay / (3600 * 1000));
+        var afterHour = afterDay % (3600 * 1000);
+        //计算剩余分钟
+        var betweenMinite = Math.floor(afterHour / (60 * 1000));
+        var afterMinite = afterHour % (60 * 1000);
+
+        var betweenSecond = Math.round(afterMinite / 1000);
+
+        pOldStr = "现在距离 " + year + "年" + addZero(month) + "月" + addZero(day) + "日" + week + " " + addZero(hour) + ":" + addZero(minite) + ":" + addZero(second) + "  " + tip;
+        pNewStr = betweenDays + " 天" + betweenHours + " 小时" + betweenMinite + " 分钟" + betweenSecond + " 秒";
+        p4.innerHTML = pOldStr + pNewStr;
+    }
+    yearSelector.onchange = function() {
+        year = yearSelector.value;
+        month = monthSelector.value;
+        setDay(year, month);
+        countDifferDate();
+    }
+    monthSelector.onchange = function() {
+        month = monthSelector.value;
+        year = yearSelector.value;
+        setDay(year, month);
+        countDifferDate();
+    }
+    daySelector.onchange = function() {
+        day = daySelector.value;
+        countDifferDate();
+    }
+    hourSelector.onchange = function() {
+        hour = hourSelector.value;
+        countDifferDate();
+    }
+    miniteSelector.onchange = function() {
+        minite = miniteSelector.value;
+        countDifferDate();
+    }
+    secondSelector.onchange = function() {
+
+        second = secondSelector.value;
+        // console.log(second);
+        countDifferDate();
+    }
+</script>
+
+</body>
+</html>
