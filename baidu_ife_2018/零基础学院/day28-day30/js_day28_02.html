@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #email-input{
+            width:250px;
+            border:1px solid #b5b5b5;
+        }
+        #email-sug-wrapper{
+            width: 250px;
+            height: 100%;
+            list-style: none;
+            padding:0;
+            margin:0;
+            border:1px solid #b5b5b5;
+            color: darkgray;
+        }
+        .hide{
+            display: none;
+        }
+
+        ul li:hover{
+            background: burlywood;
+        }
+    .selected{
+        background: slategrey;
+    }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <input id="email-input" type="text">
+    <ul id="email-sug-wrapper" class="email-sug hide"></ul>
+    <p></p>
+</div>
+<script type="text/javascript">
+    let postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+    let ipt = document.querySelector("#email-input");
+    let ul = document.querySelector("#email-sug-wrapper");
+    let result = "";
+    let nowSelectedIndex = 0;
+    ipt.oninput = function () {
+        addToUl();
+        control();
+    }
+    window.addEventListener("keydown",keyBoardChoose);
+    //
+    ipt.focus();
+
+     // 键盘输入
+    function getvalue() {
+        let text = ipt.value;
+        let arr = [];
+        // 除掉空格
+       for(let i=0;i<text.length;i++){
+           if(text.substr(i,1)!==" "&&text.substr(i,1)!==" "){
+               arr.push(i);
+           }
+       }
+      result = arr.length?text.slice(arr[0],arr[arr.length-1]+1):"";
+        return result;
+    }
+    // 提示框
+    function creatLi() {
+       getvalue();
+       ul.innerHTML="";
+       arr1 = [];
+       let text ="";
+       let matchStr = "";
+
+        for(let i=0;i<postfixList.length;i++){
+            if(result.indexOf("@")===-1){
+                text = result+"@"+postfixList[i];
+                let li = document.createElement("li");
+                li.textContent = transcoder(text);
+                arr1.push(li);
+            }else{
+                matchStr = result.slice(result.indexOf("@")+1);
+                 if(postfixList[i].indexOf(matchStr)===0){
+                     text = result.slice(0,result.indexOf("@"))+"@"+postfixList[i];
+                     let li = document.createElement("li");
+                     li.textContent = transcoder(text);
+                     arr1.push(li);
+                 }
+            }
+        }
+       return arr1;
+    }
+
+    function addToUl() {
+        creatLi();
+        for(let i=0;i<arr1.length;i++){
+            ul.appendChild(arr1[i]);
+        }
+        select();
+        ul.onclick = clickChoose;
+    }
+
+    function control() {
+        getvalue();
+        result ?show():hide();
+    }
+    function hide() {
+        ul.classList.add("hide");
+    }
+    function show() {
+        ul.classList.remove("hide");
+    }
+
+     // 添加节点
+    function clickChoose(ev){
+        let target = ev.target || ev.srcElement;
+        if(target.nodeName.toLocaleLowerCase()==="li"){
+            ipt.value = target.textContent||target.innerText;
+        }
+        ipt.focus();
+        hide();
+    }
+
+    function transcoder(str) {
+        if(str.length ===0)
+            return "";
+        let s = str.replace(/&/g, "&");
+        s = s.replace(/</g, "<");
+        s = s.replace(/>/g, ">");
+        s = s.replace(/ /g, " ");
+        s = s.replace(/'/g, "'");
+        s = s.replace(/"/g, '"');
+        return s;
+    }
+
+    function select() {
+        let lis = document.querySelectorAll("li");
+        if(lis[nowSelectedIndex]){
+            lis[nowSelectedIndex].classList.add("selected");
+        }
+    }
+
+    // 重置选中状态
+    function reset() {
+        nowSelectedIndex = 0;
+    }
+
+    // 添加键盘事件
+    function keyBoardChoose(e) {
+        let lis = document.querySelectorAll("li");
+        if (e.keyCode === 38 || e.keyCode === 40) {
+            e.preventDefault()
+        }
+        if (!ul.classList.contains("hide") && lis.length) {
+            if (e.keyCode === 38) {
+                e.preventDefault();
+                if (nowSelectedIndex === 0) {
+                    nowSelectedIndex = lis.length - 1;
+                }
+                else {
+                    nowSelectedIndex -= 1;
+                }
+                // 重新渲染提示框
+                addToUl();
+            }
+            else if (e.keyCode === 40) {
+                e.preventDefault();
+                if (nowSelectedIndex === lis.length - 1) {
+                    nowSelectedIndex = 0;
+                }
+                else {
+                    nowSelectedIndex += 1;
+                }
+                // 重新渲染提示框
+                addToUl();
+            }
+            else if (e.keyCode === 13) {
+                let text = lis[nowSelectedIndex].textContent;
+                ipt.value = transcoder(text);
+                hide();
+            }
+            else if (e.keyCode === 27) {
+                ipt.select();
+            }
+            else {
+                reset();
+                select();
+            }
+        }
+        else {
+            reset();
+            select();
+        }
+    }
+    
+
+    
+
+
+</script>
+
+</body>
+</html>
