@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="wrapper">
+    <input id="email-input" type="text" onkeyup="myKeypress()">
+    <ul id="email-sug-wrapper" class="email-sug"></ul>
+</div>
+<script type="text/javascript">
+
+   function  myKeypress() {
+       var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+       var emailinput = document.getElementById('email-input').value;
+       var emailsugwrapper = document.getElementById('email-sug-wrapper');
+        emailsugwrapper.innerHTML='';
+       for (var i in postfixList){
+           emailsugwrapper.innerHTML+=emailinput+"@"+postfixList[i]+"<br/>";
+       }
+       emailsugwrapper.hide();
+   }
+ 
+</script>
+
+
+</body>
+</html>
