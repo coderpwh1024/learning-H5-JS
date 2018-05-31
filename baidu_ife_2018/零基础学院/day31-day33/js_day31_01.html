@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>我是精明的小卖家(一)</title>
+    <style>
+        .box {
+            width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid seagreen;
+        }
+
+        table.dataintable {
+            margin-top: 15px;
+            border-collapse: collapse;
+            border: 1px solid #aaa;
+            width: 100%;
+        }
+
+        table.dataintable th {
+            vertical-align: baseline;
+            padding: 5px 15px 5px 6px;
+            background-color: #3F3F3f;
+            border: 1px solid #3F3F3F;
+            text-align: left;
+            color: #fff;
+        }
+
+        table.dataintable td {
+            vertical-align: text-top;
+            padding: 6px 15px 6px 6px;
+            border: 1px solid #aaa;
+        }
+
+        table.dataintable tr:nth-child(odd) {
+            background-color: #F5F5F5;
+        }
+
+        table.dataintable tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+    </style>
 </head>
 <body>
+<div class="box">
+    <h3>地区</h3>
+    <div id="area"></div>
+    <h3>产品</h3>
+    <div id="product"></div>
+    <div id="table-wrapper"></div>
+</div>
 
 </body>
 </html>
