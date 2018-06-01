@@ -51,6 +51,158 @@
     <div id="product"></div>
     <div id="table-wrapper"></div>
 </div>
+<script type="text/javascript">
+    let sourceData = [{
+        product: "手机",
+        region: "华东",
+        sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+    }, {
+        product: "手机",
+        region: "华北",
+        sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+    }, {
+        product: "手机",
+        region: "华南",
+        sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+    }, {
+        product: "笔记本",
+        region: "华东",
+        sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+    }, {
+        product: "笔记本",
+        region: "华北",
+        sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+    }, {
+        product: "笔记本",
+        region: "华南",
+        sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+    }, {
+        product: "智能音箱",
+        region: "华东",
+        sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+    }, {
+        product: "智能音箱",
+        region: "华北",
+        sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+    }, {
+        product: "智能音箱",
+        region: "华南",
+        sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+    }]
+
+    var tableWrapper = document.querySelector('#table-wrapper');
+    var area = document.querySelector('#area');
+    var areaBtn = area.getElementsByTagName('input');
+    var product = document.querySelector('#product');
+    var productBtn = document.getElementsByTagName('input');
+    var selectedProduct = [];
+    var selectedArea = [];
+    var selectedProduct = [];
+    var selectedArea = [];
+    var clickedBtns = {
+        area: {
+            '华北': true,
+            '华南': false,
+            '华东': false
+        },
+        product: {
+            '手机': true,
+            '笔记本': false,
+            '智能音箱': false
+        }
+    };
+    var areaArr = [{name: 'area', value: 'huabei', text: '华北'},
+        {name: 'area', value: 'huanan', text: '华南'},
+        {name: 'area', value: 'huadong', text: '华东'},
+        {name: 'area', value: 'all', text: '全选'}];
+    var productArr = [{name: 'prodcut', value: 'mobile', text: '手机'},
+        {name: 'product', value: 'laptop', text: '笔记本'},
+        {name: 'product', value: 'speaker', text: '智能音箱'},
+        {name: 'product', value: 'all', text: '全选'}];
+    var selectionNumber = 0;
+
+      // checkbox
+    function getSelectedBtns() {
+          // 地区 area
+        for (var i in clickedBtns.area) {
+            if (clickedBtns.area[i]) {
+                   // selectedArea 中不含有该有则 添加
+                if (selectedArea.indexOf(i) < 0) {
+                    selectedArea.push(i);
+                }
+            } else {
+                 // 反之，则移除
+                if (selectedArea.indexOf(i) > 0) {
+                    selectedArea.splice(selectedArea.indexOf(i), 1);
+                }
+            }
+        }
+        // product
+        for(var i in clickedBtns.product){
+            if(clickedBtns.product[i]){
+
+                if(selectedProduct.indexOf(i)<0){
+                    selectedProduct.push(i)
+                }
+            }else{
+                if(selectedProduct.indexOf(i)>=0){
+                    selectedProduct.slice(selectedProduct.indexOf(i),1);
+                }
+            }
+        }
+    }
+
+     // 表格
+    function tableStr(order,obj){
+           var str = '';
+           var product = obj.product;
+           var sale = obj.sale;
+           var region = obj.region;
+
+           if(selectedArea.indexOf(region)>=0&&selectedProduct.indexOf(product)>=0){
+              switch (order){
+                  // 商品前，地区后
+                  case 'productArea':
+                      str+='<tr><td class="header">'+product+'</td><td>'+region+'</td><td>'+sale[0]+'</td><td>'+s;
+                 break;
+                  // 地区前，商品后
+                  case 'areaProduct':
+                      str+='<tr><td class="header">'+region+'</td><td>'+product+'</td><td>'+sale[0]+'</td><td>'+s;
+                      break;
+                  default:
+                      break;
+              }
+           }
+           return str;
+    }
+    
+    function combineTable(combineFactor) {
+
+        var head = document.querySelectorAll('.header');
+        var productL = selectedProduct.length;
+        var areaL = selectedArea.length;
+
+        var totalRows = productL*areaL;
+        var element = combineFactor==='productArea'?areaL:productL;
+        var length = combineFactor === 'productArea'?productL:areaL;
+        var arr = [];
+
+        for(var i=0;i<length;i++){
+            arr.push(element*i);
+        }
+        for(var i=0;i<totalRows;i++){
+            if(arr.indexOf(i)>=0){
+                head[i].setAttribute('rowspan',element.toString());
+            }else{
+                head[i].style.display = 'none';
+            }
+        }
+
+    }
+
+
+</script>
+
 
 </body>
 </html>
