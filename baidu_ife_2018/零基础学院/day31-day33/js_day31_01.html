@@ -246,10 +246,11 @@
         // 调用 融合表格函数
         return combineTable(combineFactor);
     }
-
+      // 检查最后选项函数
     function checkLastSelection(type) {
         selectedArea = 0;
         for (var i = 0; i < type.length; i++) {
+        // 如果选中项的value不为all且选项选中的话, number加一
             if (type[i].value !== 'all') {
                 if (type[i].checked) {
                     selectionNumber += 1;
@@ -257,6 +258,31 @@
             }
         }
         return selectionNumber < 1;
+    }
+
+     // 点击事件
+    function clickedItems(type,targetValue,target){
+       if(type==='area'){
+          if(checkLastSelection(areaBtn)) target.checked = true;
+           if(target.checked){
+                 // 如果是勾选 设置clickedBtn的对应选项不可勾选
+               clickedBtns.area[targetValue] = true;
+           }else{
+               // 如果取消勾选 设置 clickedBtn中的对应选项为false
+             clickedBtns.area[targetValue] = false;
+           }
+
+       }else{
+           if(checkLastSelection(productBtn)) target.checked= true;
+           if(target.checked){
+               // 如果是勾选 设置clickedBtn中的对应选项为true
+               clickedBtns.product[targetValue] = false;
+           }else{
+               // 如果是取消勾选 设置clickedBtn 中对应选项为false
+               clickedBtns.product[targetValue] =false;
+           }
+
+       }
     }
 
 
