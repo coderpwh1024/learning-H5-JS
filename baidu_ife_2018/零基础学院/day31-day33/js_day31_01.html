@@ -121,83 +121,142 @@
         {name: 'product', value: 'all', text: '全选'}];
     var selectionNumber = 0;
 
-      // checkbox
+    // checkbox
     function getSelectedBtns() {
-          // 地区 area
+        // 地区 area
         for (var i in clickedBtns.area) {
             if (clickedBtns.area[i]) {
-                   // selectedArea 中不含有该有则 添加
+                // selectedArea 中不含有该有则 添加
                 if (selectedArea.indexOf(i) < 0) {
                     selectedArea.push(i);
                 }
             } else {
-                 // 反之，则移除
+                // 反之，则移除
                 if (selectedArea.indexOf(i) > 0) {
                     selectedArea.splice(selectedArea.indexOf(i), 1);
                 }
             }
         }
         // product
-        for(var i in clickedBtns.product){
-            if(clickedBtns.product[i]){
+        for (var i in clickedBtns.product) {
+            if (clickedBtns.product[i]) {
 
-                if(selectedProduct.indexOf(i)<0){
+                if (selectedProduct.indexOf(i) < 0) {
                     selectedProduct.push(i)
                 }
-            }else{
-                if(selectedProduct.indexOf(i)>=0){
-                    selectedProduct.slice(selectedProduct.indexOf(i),1);
+            } else {
+                if (selectedProduct.indexOf(i) >= 0) {
+                    selectedProduct.slice(selectedProduct.indexOf(i), 1);
                 }
             }
         }
     }
 
-     // 表格
-    function tableStr(order,obj){
-           var str = '';
-           var product = obj.product;
-           var sale = obj.sale;
-           var region = obj.region;
+    // 表格
+    function tableStr(order, obj) {
+        var str = '';
+        var product = obj.product;
+        var sale = obj.sale;
+        var region = obj.region;
 
-           if(selectedArea.indexOf(region)>=0&&selectedProduct.indexOf(product)>=0){
-              switch (order){
-                  // 商品前，地区后
-                  case 'productArea':
-                      str+='<tr><td class="header">'+product+'</td><td>'+region+'</td><td>'+sale[0]+'</td><td>'+s;
-                 break;
-                  // 地区前，商品后
-                  case 'areaProduct':
-                      str+='<tr><td class="header">'+region+'</td><td>'+product+'</td><td>'+sale[0]+'</td><td>'+s;
-                      break;
-                  default:
-                      break;
-              }
-           }
-           return str;
+        if (selectedArea.indexOf(region) >= 0 && selectedProduct.indexOf(product) >= 0) {
+            switch (order) {
+                // 商品前，地区后
+                case 'productArea':
+                    str += '<tr><td class="header">' + product + '</td><td>' + region + '</td><td>' + sale[0] + '</td><td>' + s;
+                    break;
+                // 地区前，商品后
+                case 'areaProduct':
+                    str += '<tr><td class="header">' + region + '</td><td>' + product + '</td><td>' + sale[0] + '</td><td>' + s;
+                    break;
+                default:
+                    break;
+            }
+        }
+        return str;
     }
-    
+
     function combineTable(combineFactor) {
 
         var head = document.querySelectorAll('.header');
         var productL = selectedProduct.length;
         var areaL = selectedArea.length;
 
-        var totalRows = productL*areaL;
-        var element = combineFactor==='productArea'?areaL:productL;
-        var length = combineFactor === 'productArea'?productL:areaL;
+        var totalRows = productL * areaL;
+        var element = combineFactor === 'productArea' ? areaL : productL;
+        var length = combineFactor === 'productArea' ? productL : areaL;
         var arr = [];
 
-        for(var i=0;i<length;i++){
-            arr.push(element*i);
+        for (var i = 0; i < length; i++) {
+            arr.push(element * i);
         }
-        for(var i=0;i<totalRows;i++){
-            if(arr.indexOf(i)>=0){
-                head[i].setAttribute('rowspan',element.toString());
-            }else{
+        for (var i = 0; i < totalRows; i++) {
+            if (arr.indexOf(i) >= 0) {
+                head[i].setAttribute('rowspan', element.toString());
+            } else {
                 head[i].style.display = 'none';
             }
         }
 
+    }
+
+    // 渲染表格
+    function addToTable() {
+
+        getSelectedBtns();
+        var str = "";
+        // 表头
+        var table = '<table class="dataintable"><tr><th>地区</th><th>商品</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th><th>12月</th></tr>';
+
+        var combineFactor = 'productArea';
+        // 二维数组
+        var arrL = [selectedArea.length, selectedProduct.length];
+        for (var i in sourceData) {
+
+            switch (arrL.join('').replace(/[2-999]/g, 'm')) {
+
+                // 商品和地区数为1
+                case '11':
+                    str += tableStr('productArea', sourceData[i]);
+                    break;
+                //
+                case '1m':
+                    // 更改表头为地区前, 商品后
+                    table = '<table class="dataintable"><tr><th>地区</th><th>商品</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th><th>12月</th></tr>';
+                    str += tableStr('areaProduct', sourceData[i]);
+                    combineFactor = 'areaProduct';
+                    break;
+
+                //  选中地区数大于2，商品数为1
+                case 'm1':
+                    str += tableStr('productArea', sourceData[i]);
+                    break;
+
+                case 'mm':
+                    str += tableStr('productArea', sourceData[i]);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        table += str;
+        // 生成表格
+        tableWrapper.innerHTML = table + '</table>';
+        // 调用 融合表格函数
+        return combineTable(combineFactor);
+    }
+
+    function checkLastSelection(type) {
+        selectedArea = 0;
+        for (var i = 0; i < type.length; i++) {
+            if (type[i].value !== 'all') {
+                if (type[i].checked) {
+                    selectionNumber += 1;
+                }
+            }
+        }
+        return selectionNumber < 1;
     }
 
 
